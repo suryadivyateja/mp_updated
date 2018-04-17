@@ -1,0 +1,59 @@
+<div class="set-main-container">
+    <div class="title-top">
+      <div class="set-w-control">
+        <h2 class="set-titles">
+          Payment and Financials
+        </h2>
+      </div>
+    </div>
+    <div class="set-core">
+      <div class="set-w-control">
+        <div class="set-w-title">
+          <h2>Payment Methods</h2>
+        </div><br>
+        <div class="set-w-paypal">
+          <div class="set-w-paypal-img">
+          <img src="../../assets/img/paypal.PNG">
+          <div class="set-w-paypal-contnet">
+              {{pay_palEmail}}
+            </div>
+          </div>
+         </div>
+         <div class="set-w-verify">
+           <img src="../../assets/img/verify.PNG">
+           </div><br><br><br><br>
+
+           <hr>
+           <br>
+           <div class="set-w-details">
+             <h2>Uapdate Paypal Details</h2>
+             </div>
+             <div class="set-w-details-content">
+               <p>In order to earn mony,you'll need to set up your payment account,Please enter your Paypal email address.</p>
+             </div><br>
+             <div class="set-w-paypal-id">
+               <h6>PAYPAL ID (EMAIL ADDRESS):</h6>
+               </div>
+               <div class="set-w-paypal-box">
+                 <input type="text" [(ngModel)]="pay_palEmail">
+                 </div>
+                 <br><br>
+                 <div class="set-w-warning">
+                   <div class="set-w-warning-content">
+                     <h5>! IMPORTANT!</h5></div>
+                     <div class="seet-w-warning-main">
+                     <ul><li>We will no be able to recover fund sent to the wrong address, please amke sure the information you enter is correct.</li></ul>
+                     </div>
+                    
+                   </div>
+                   <div class="set-w-check">
+                      <input type="checkbox" name="vehicle2" value="Car" (change)="handleChange($event)"> <div class="set-w-agree">I UNDERSTAND AND AGREE.</div>
+
+                     </div><br>
+                     <hr>
+
+                     <button type="button" class="btn btn-save" (click)="saveSettings()">Save setting</button>
+           
+      </div>
+    </div>
+  </div>

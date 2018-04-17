@@ -1,0 +1,246 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="o-d-top">
+    <div class="width-control">
+      <h2 class="o-d-title">
+        {{gig_title}}
+      </h2>
+
+      <div class="o-d-dets-div">
+        <ul>
+          <li class="od-det seller-name">
+            <span class="od-key">
+              Seller :
+            </span>
+            <span class="od-val od-val-name">
+              {{seller_name}}
+            </span> 
+          </li>
+          <li class="od-det buyer-name">
+            <span class="od-key">
+              Buyer :
+            </span>
+            <span class="od-val od-val-name">
+              {{buyer_name}}
+            </span> 
+          </li>
+          <li class="od-det">
+            <span class="od-key">
+              Order :
+            </span>
+            <span class="od-val">
+              {{order_id}}
+            </span> 
+          </li>
+          <li class="od-det">
+            <span class="od-key">
+              {{date}}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="width-control">
+    <div class="od-core">
+      <div class="od-left">
+        <div class="od-l-top">
+          <div class="od-lt-left">
+            <div class="od-lt-l-l">
+               <div class="od-lt-l-img">
+                 <img src="{{img}}" alt="">
+               </div> 
+            </div>
+            <div class="od-lt-l-r">
+              <h3 class="od-lt-name">
+                {{seller_name}}
+              </h3>
+              <button class="chat-btn" (click)="go_to_inbox(seller_id)">
+                <span class="chat-status"></span>
+                Chat
+              </button>
+            </div>
+          </div>
+          <div class="od-lt-right">
+            <div class="stat-div-core">
+              <div class="stat-div">
+                <div class="stat-out stat-one">
+                  <div class="stat-in" [style.width]="div_one">
+
+                  </div>
+                </div>
+                <div class="stat-name">
+                  OPEN
+                </div>
+              </div>
+              
+              <div class="stat-div">
+                <div class="stat-out stat-two">
+                  <div class="stat-in" [style.width]="div_two">                    
+                  </div>
+                </div>
+                <div class="stat-name">
+                  STARTED
+                </div>
+              </div>
+
+              <div class="stat-div">
+                <div class="stat-out stat-three">
+                  <div class="stat-in" [style.width]="div_three">
+
+                  </div>
+                </div>
+                <div class="stat-name">
+                  DELIVERED
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="od-req">
+          <div class="od-req-core">
+            <h4 class="od-r-head">
+              Requirements to start work
+            </h4>
+            <p class="od-r-t-p">
+              Hello,
+            </p>
+            <p class="od-r-t-p">
+             {{description}}
+            </p>
+            <div class="od-req-btm-div">
+              <div class="od-req-btm-left">
+                <div class="od-req-atch-div">
+                  <div class="od-r-at-head">
+                    ATTACHMENTS
+                  </div>
+                  <p>
+                    <span class="od-dw-ico">
+                      <i class="fas fa-arrow-circle-down"></i>
+                    </span>
+                    <a href={{attachment}} download="attachment">Download</a>
+                  </p>
+                </div>
+              </div>
+              <div class="od-req-btm-right">
+                <span *ngIf="accept">
+                    <button class="od-start-btn" (click)="accept_order()">ACCEPT</button>
+                  </span>
+                  <span *ngIf="deliver">
+                    <button class="od-start-btn" (click)="deliver_order()">DELIVER</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span *ngIf="showmark === true">
+          <div class="od-mark">
+            <div class="od-mark-left">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="od-mark-right">
+              You have marked this order as delivered.
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="od-right">
+        <div class="div-one">
+          <div class="d-o-t">
+            <h3>PRICE</h3>
+            <span class="cost">{{f_actual_amount}}<sup class="doller">$</sup></span>
+          </div>
+          <div class="d-o-b">
+              <p><i class="fas fa-clock"></i>&nbsp;Time of delivery</p>
+              <p class="del-days">{{days_left}}</p>
+          </div>
+        </div>
+        <div class="div-two">
+          <h1>PROCESSING FEE</h1>
+          <p>{{f_process_fee}}</p>
+        </div>
+        <div class="div-three">
+          <h1>EXTRAS</h1>
+          <div *ngFor="let x of extras">
+            <div class="sel-ext">
+              <p>{{x.description}}</p>
+              <p>$ {{x.price}}</p>
+            </div>
+          </div>
+          <div *ngIf="extras.length === 0">
+            <p>No Extras Selected</p>
+          </div>
+        </div>
+        <div class="div-four div-two">
+            <h1>TOTAL</h1>
+            <p>$ {{total_amount}}</p>
+        </div>
+      </div>
+      <!-- <div class="od-right">
+        <div class="od-right-core">
+          
+          <div class="od-right-div odr-price-div">
+            <div class="odrt-top">
+              <div class="od-r-left">
+                <h4>PRICE</h4>
+              </div>
+              <div class="od-r-right">
+                <div class="price-block">
+                  <span class="dlr-span">
+                    $
+                  </span> {{f_actual_amount}}
+                </div>
+              </div>
+            </div>
+            <div class="odrt-btm" id="days-left">
+              <div class="od-r-left">
+                <h6>
+                  <span class="odrl-ico">
+                    <i class="fas fa-clock"></i> &nbsp; Time of Delivery
+                  </span>
+                </h6>
+              </div>
+              <div class="od-r-right">
+                  {{days_left}} day(s)
+              </div>
+            </div>
+          </div>
+
+          <div class="od-right-div odr-process-div">
+            <div class="od-r-left">
+              <h3>PROCESSING FEE</h3>
+            </div>
+            <div class="od-r-right">
+                {{f_process_fee}}
+            </div>
+          </div>
+
+          <div class="od-right-div odr-ext-div">
+            <div class="od-r-left">
+              EXTRA
+              <p>
+                There are no extra services
+              </p>
+            </div>
+            <div class="od-r-right">
+
+            </div>
+          </div>
+
+          <div class="od-right-div odr-total-div">
+            <div class="od-r-left">
+              TOTAL
+            </div>
+            <div class="od-r-right">
+              <div class="price-block">
+                <span class="dlr-span">
+                  $
+                </span> {{total_amount}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

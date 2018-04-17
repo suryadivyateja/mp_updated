@@ -1,0 +1,110 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="u-sub-heads">MY ORDERS</h2>
+    <div class="m-core">
+      <div class="m-left">
+        <div class="m-left-core">
+          <div class="m-l-index">
+            <div class="m-l-index-title">
+              <h3>Orders</h3>
+            </div>
+            <div class="m-l-btn selected-index" (click)="get_orders('all')">
+              All
+            </div>
+            <div class="m-l-btn" (click)="get_orders('cancelled')">
+              Open
+            </div>
+            <div class="m-l-btn " (click)="get_orders('inprogress')">
+              Started
+            </div>
+            <div class="m-l-btn" (click)="get_orders('completed')">
+              Delivered
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-right">
+          <div class="m-gigs-div">
+              <div *ngFor="let x of f_all_orders">
+                <div class="m-gig" (click)=" go_to_orderDet([x.order_id])">
+                  <div class="m-img">
+                    <img src="{{x.gig_img}}" alt="" width="100%" height="100%">
+                    
+                  </div>
+                  <div class="m-title-div">
+                    <h3 class="m-title">
+                        {{x.title}}..
+                    </h3>
+                  </div>
+                  <div class="m-buyer-div">
+                    <h6 class="m-buyer-h">
+                      Seller:
+                      <span class="m-buyer-name">{{x.seller_name}}</span>
+                    </h6>
+                  </div>
+                  <div class="m-dets-div">
+                    <div class="m-dets">
+                      <span class="m-det-ico">
+                        <i class="fas fa-shopping-cart"></i>
+                      </span>
+                      <p>{{x.order_num}}</p>
+                    </div>
+                    <div class="m-dets">
+                      <h5>TOTAL</h5>
+                      <h6>
+                        ${{x.total_amount}}
+                      </h6>
+                    </div>
+                    <div class="m-dets">
+                      <h5>PURCHASE DATE</h5>
+                      <h6>
+                          {{x.order_date}}
+                      </h6>
+                    </div>
+                  </div>
+                  <!-- Copy paste the other code -->
+                  <div class="m-progress-div">
+                    <div class="stat-div-core">
+                      <div class="stat-div">
+                        <div class="stat-out stat-one">
+                          <div class="stat-in">
+  
+                          </div>
+                        </div>
+                        <div class="stat-name" [style.width]="x.div_one">
+                          STARTED
+                        </div>
+                      </div>
+  
+                      <div class="stat-div">
+                        <div class="stat-out stat-two">
+                          <div class="stat-in" [style.width]="x.div_two">
+                          </div>
+                        </div>
+                        <div class="stat-name">
+                          DELIVERED
+                        </div>
+                      </div>
+  
+                      <div class="stat-div">
+                        <div class="stat-out stat-three">
+                          <div class="stat-in" [style.width]="x.div_three">
+  
+                          </div>
+                        </div>
+                        <div class="stat-name">
+                          COMPLETED
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

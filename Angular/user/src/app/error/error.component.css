@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding:0px;
+   }
+   
+   
+   .main-screen{
+       background: #0088ff;
+       display: flex;
+       justify-content: center;
+       height: auto;
+       width: 100%;
+   }
+   .main-title h2{
+       margin-top: 60px;
+       color:#eceeff;
+       font-size: 40px;
+       font-weight: 100;
+       word-spacing: 1px;
+   }
+   .main-title-content{
+       color: white;
+       font-size: 30px;
+       font-family: arial;
+       margin-top: 10px;
+   }
+   .main-content p{
+       color: #ced4e4;
+       font-size: 16px;
+       letter-spacing: .09em;
+       line-height: 2.0;
+       margin-top: 10px;
+       
+   }
+   .icon a{
+       font-size: 35px;
+       color: white;
+   }
+   .icon a:hover{
+       font-size: 35px;
+       color: white;
+   
+   }

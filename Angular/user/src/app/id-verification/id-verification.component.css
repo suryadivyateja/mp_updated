@@ -1,0 +1,14 @@
+.set-core{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+p{
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.5;
+  font-size: 95%;
+}
+.strong{
+  font-weight: var(--font-weight-bold);
+  font-size: 110%;
+}

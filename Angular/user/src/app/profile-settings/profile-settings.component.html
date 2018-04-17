@@ -1,0 +1,117 @@
+<div class="set-main-container">
+  <div class="title-top">
+    <div class="set-w-control">
+      <h2 class="set-titles">
+        Profile Settings
+      </h2>
+    </div>
+  </div>
+  <div class="set-core">
+    <div class="set-w-control">
+      <div class="set-core-main">
+        <div class="set-core-left">
+          <div class="set-w-p">
+            ACCOUNT PHOTO
+            <div class="set-w-img">
+              <img src="{{user_img}}" id="change-p-p" width="80px" height="80px">
+            </div>
+            <label class="set-core-box" for="img-pro">
+              <span class="set-core-change">Change photo</span>
+            </label>
+            <input type="file" name="img-pro" id="img-pro"  (change)="fileChange($event)" accept=".jpg,.png">
+          </div>
+        </div>
+        <div class="set-core-right">
+          <div class="set-core-title">
+            <div class="set-w-p">
+              <div class="set-core-title-h">
+                PROFILE COVER
+              </div>
+              <div class="set-w-img-1">
+                <img src="../../assets/img/capture1.PNG">
+              </div>
+
+            </div>
+          </div>
+          <div class="set-core-title">
+            <div class="set-w-img">
+              <img src="../../assets/img/capture2.PNG">
+            </div>
+          </div>
+          <div class="set-core-title">
+            <div class="set-w-img">
+              <img src="../../assets/img/capture3.PNG">
+            </div>
+          </div>
+          <div class="set-core-title">
+            <div class="set-w-img">
+              <img src="../../assets/img/capture4.PNG">
+            </div>
+          </div>
+          <div class="set-core-title">
+            <div class="set-w-img">
+              <img src="../../assets/img/capture5.PNG">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="set-w-form">
+        <!-- <form class="set-w-form-group"> -->
+           <div class="set-w-form-1">
+             <div class="set-w-fname">
+            <label for="name" class="name">First Name*</label>
+            <div class="set-w-name ">
+            <input type="text" id="fname" name="fname" class="current-add" placeholder=" First name" [(ngModel)]="user_name">
+          </div>
+          </div>
+          
+          <div class="set-w-email">
+          <label for="email" class="email">Email Address*</label>
+            <div class="set-w-email-1 ">
+            <input type="text"  name="fname" class="current-add" placeholder=" sneakyway@yahoo.com" [(ngModel)]="user_email">
+          </div>
+          </div>
+          </div>
+          
+          <div class="set-w-form-2">
+              <div class="set-w-fname">
+             <label for="name" class="name">Country*</label>
+             <div class="set-w-name ">
+             <input type="text"  name="Country" class="country" placeholder=" Australia " [(ngModel)]="user_country">
+           </div>
+           </div>
+           
+           <div class="set-w-email">
+           <label for="email" class="email">Designation*</label>
+             <div class="set-w-email-1 ">
+             <input type="text"  name="fname" class="current-add" placeholder=" Peter" [(ngModel)]="user_designation">
+           </div>
+           </div>
+           </div>
+           <div class="set-w-form-3">
+             <div class="set-w-some">
+               <div class="set-w-con">
+                 <span class="con">
+                   SOMETHING ABOUT YOU
+                 </span>
+               </div>
+               <div class="set-w-text">
+                  <textarea rows="10" cols="52" class="text" [(ngModel)]="user_description">
+                      I'm a freelance graphics designer based in Sydney and started this gig as a fun project to do in my spare time.
+                      </textarea>
+               </div>
+             </div>
+           </div>
+
+
+        <!-- </form> -->
+     
+
+        <hr>
+
+        <button type="button" class="btn btn-save" (click)="saveUser()">Save settings</button>
+
+      </div>
+    </div>
+  </div>
+</div>

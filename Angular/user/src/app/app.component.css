@@ -1,0 +1,14 @@
+.alert{
+    width:350px;
+    height:80px;
+    background-color: tomato;
+    position: fixed;
+    z-index: 150;
+    left:0%;
+    transform: translate(2%,720%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 4px;
+}

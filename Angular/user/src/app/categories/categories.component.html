@@ -1,0 +1,465 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+
+  <div class="top-img">
+    <div class="db">
+      <div class="width-control">
+        <div class="left-title-div">
+          <div class="left-title-core">
+            <h2 class="left-title">
+             {{selected_cat}}
+            </h2>
+            <h5 class="left-title-cap">
+              From eBooks to posters - hand-picked dsigners ready for your project.
+            </h5>
+          </div>
+        </div>
+        <div class="right-play-vid-div">
+          <div class="right-play-vid-core">
+            <div class="play-vid-ico">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <h6 class="play-vid-title">How it works</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cats-main-container">
+    <div class="width-control">
+      <div class="cats-core-container">
+        <!-- Left Index -->
+        <div class="cats-index-div">
+          <div class="cats-index-div-core">
+            <div class="cats-index-title-div">
+              <h5 class="cats-index-title">
+                Shop Category
+              </h5>
+            </div>
+            <div class="cats-index-index-div">
+              <ul>
+                <li class="select selected-li" (click)="gigs_get('all')">
+                  Browse All Products
+                </li>
+                <li class="select" (click)="gigs_get('rc')">
+                 Resume Services
+                </li>
+                <li class="select" (click)="gigs_get('or')">
+                  Cover Letter Writing
+                </li>
+                <li class="select" (click)="gigs_get('vr')">
+                  LinkedIn Makeover
+                </li>
+                <li class="select" (click)="gigs_get('lp')">
+                  Followup Letters
+                </li>
+                <li class="select">
+                  Thank you Letters
+                </li>
+                <li class="select">
+                  Selection Criteria
+                </li>
+                <li class="select">
+                  Personal Websites
+                </li>
+                <li class="select">
+                  Infographic Resumes
+                </li>
+                <li class="select">
+                  Interview Coaching
+                </li>
+                <li class="select">
+                  Fresher's/ Graduates
+                </li>
+                <li class="select">
+                  Entrepreneurs
+                </li>
+                <li class="select">
+                  Government &amp; Defence
+                </li>
+                <li class="select">
+                  CEO &amp; Executives
+                </li>
+              </ul>
+            </div>
+            <div class="price-range-div">
+              <div class="price-range-title-div">
+                <h5 class="price-range-title">
+                  Price Range
+                </h5>
+              </div>
+              <div class="price-range-range-div">
+                  <input type="range" min="10" max="2000" value="1000">
+              </div>
+            </div>
+            <div class="seller-level-div">
+              <h6 class="seller-level-title">
+                Delivery Time
+              </h6>
+              <div class="seller-levels-core">
+                <div class="seller-level">
+                  <label>
+                    <div class="seller-level-left">
+                      <input type="radio" name="del-time" id="del-time">
+                        Up to 24 hours
+                    </div>
+                    <div class="seller-level-right">
+                      (30)
+                    </div>
+                  </label>
+                </div>
+                <div class="seller-level">
+                  <label>
+                    <div class="seller-level-left">
+                      <input type="radio" name="del-time" id="del-time">
+                      Up to 3 days
+                    </div>
+                    <div class="seller-level-right">
+                        (14)
+                    </div>
+                  </label>
+                </div>
+                <div class="seller-level">
+                  <label>
+                    <div class="seller-level-left">
+                      <input type="radio" name="del-time" id="del-time">
+                      Upto 7 days
+                    </div>
+                    <div class="seller-level-right">
+                      (27)
+                    </div>
+                  </label>
+                </div>
+                <div class="seller-level">
+                  <label>
+                    <div class="seller-level-left">
+                      <input type="radio" name="del-time" id="del-time">
+                      Any
+                    </div>
+                    <div class="seller-level-right">
+                      (2)
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="seller-lang-div">
+              <h6 class="seller-lang-title">
+                Location
+              </h6>
+              <div class="seller-langs-core">
+                <div class="seller-lang">
+                  <label>
+                    <div class="seller-lang-left">
+                      <input type="checkbox" id="">
+                        India
+                    </div>
+                    <div class="seller-lang-right">
+                      (14)
+                    </div>
+                  </label>
+                </div>
+                <div class="seller-lang">
+                  <label>
+                    <div class="seller-lang-left">
+                      <input type="checkbox" id="">
+                        USA
+                    </div>
+                    <div class="seller-lang-right">
+                      (1)
+                    </div>
+                  </label>
+                </div>
+                <div class="seller-lang">
+                  <label>
+                    <div class="seller-lang-left">
+                      <input type="checkbox" id="">
+                      Australia
+                    </div>
+                    <div class="seller-lang-right">
+                      (1)
+                    </div>
+                  </label>
+                </div>
+                <p class="show-more-p">
+                  Show More
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cats-main-div">
+          <div class="cats-filter-div">
+            <div class="cats-filter-left-div">
+              <select class="cats-filter-select" id="filter-sort" (change)="filter()">
+                <option value="None" selected>
+                  None
+                </option>
+                <option value="Most Recent">
+                  Most Recent
+                </option>
+                <option value="Low To High">
+                  Low To High
+                </option>
+                <option value="High To Low">
+                  High To Low
+                </option>
+              </select>
+            </div>
+            <div class="cats-filter-right-div">
+              <div class="cats-filters-ico selected-filter-ico" id="grid-ico">
+                <i class="fas fa-th-large"></i>
+              </div>
+              <div class="cats-filters-ico" id="list-ico">
+                <i class="fas fa-bars"></i>
+              </div>
+            </div>
+          </div>
+          <div class="gigs-core">
+            <span *ngFor="let gig of gigs">
+              <div class="gig">
+                <div class="gig-display">
+                  <div class="gig-img">
+                    <img src="{{gig.gig_img_main}}" alt="" width="100%" height="100%">
+                  </div>
+                  <div class="gig-dets">
+                    <div class="gig-title-div">
+                      <h3 class="gig-title">
+                          {{gig.title.substr(0,59)}}...
+                      </h3>
+                    </div>
+                    <div class="gig-author-name-div">
+                      <h4 class="gig-author-name">
+                        By {{gig.name | titlecase}}
+                      </h4>
+                    </div>
+                    <div class="gig-rating-div">
+                      <div class="gig-rating-core">
+                          <img src="{{gig.star1}}" alt="" width="12px" height="12px">
+                          <img src="{{gig.star2}}" alt="" width="12px" height="12px">
+                          <img src="{{gig.star3}}" alt="" width="12px" height="12px">
+                          <img src="{{gig.star4}}" alt="" width="12px" height="12px">
+                          <img src="{{gig.star5}}" alt="" width="12px" height="12px">
+                      </div>
+                    </div>
+                    <div class="gig-stats-div">
+                      <div class="gig-stats-left">
+                        <span class="gig-stat-icon">
+                          <i class="fas fa-users"></i>
+                        </span>
+                        <p>{{gig.num_of_pro_com}} Completed</p>
+                      </div>
+                      <div class="gig-stats-right">
+                          <p>STARTING AT  <span class="gig-price">${{gig.pac_cos_sta}}</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="gig-hover">
+                  <div class="gig-hover-title-div">
+                    <h3 class="gig-hover-title">
+                      {{gig.title}}
+                    </h3>
+                  </div>
+                  <div class="gig-hover-n-tags-div">
+                    <div class="gig-hover-best-seller-tag-div">
+                      <span class="gig-hover-best-seller-tag">
+                        BEST SELLER
+                      </span>
+                    </div>
+                    <div class="gig-hover-tags-tags-div">
+                      in <span class="gig-tags-tag">{{gig.category}}</span> <span class="gig-tags-cat">Business</span>
+                    </div>
+                  </div>
+                  <div class="gig-hover-stats-div">
+                    <div class="gig-hover-stat-div">
+                      <span class="gig-hover-stat-ico">
+                          <i class="fas fa-clock"></i>
+                      </span>
+                      <h6 class="gig-hover-stat-stat">{{gig.pac_del_sta}} Days Delivery</h6>
+                    </div>
+                    <div class="gig-hover-stat-div">
+                      <span class="gig-hover-stat-ico">
+                          <i class="fas fa-sync"></i>
+                      </span>
+                      <h6 class="gig-hover-stat-stat">{{gig.rev_sta}} Revisions</h6>
+                    </div>
+                  </div>
+                  <div class="gig-hover-desc-div">
+                    <p class="gig-hover-desc">
+                      {{gig.description.substr(0,150)}}..
+                    </p>
+                  </div>
+      
+                  <div class="gig-hover-tags-div">
+                    <div class="gig-hover-tags-core">
+                      <span class="gig-hover-tag">
+                        ux design
+                      </span>
+                      <span class="gig-hover-tag">
+                        ui design
+                      </span>
+                      <span class="gig-hover-tag">
+                        web design
+                      </span>
+                      <span class="gig-hover-tag">
+                        graphic design
+                      </span>
+                      <span class="gig-hover-tag">
+                        app design
+                      </span>
+                      <span class="gig-hover-tag">
+                        dashboard design
+                      </span>
+                      <span class="gig-hover-tag">
+                        landing page design
+                      </span>
+                    </div>
+                  </div>
+      
+                  <div class="gig-hover-add-btn-div">
+                    <button class="gig-hover-add-btn" (click)='gotoGig(gig._id)'>
+                      View Details
+                    </button>
+                    <div class="gig-hover-fav-btn-div">
+                      <!-- <span class="gig-hover-fav-btn">
+                        <i class="fas fa-heart"></i>
+                      </span> -->
+                      <span *ngIf="gig.fav_status == false">
+                        <span class="gig-hover-fav-btn">
+                          <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,gig.user_id,gig)">
+                        </span>
+                      </span>
+                      <span *ngIf="gig.fav_status == true">
+                        <span class="gig-hover-fav-btn">
+                          <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,gig.user_id,gig)">
+                        </span>
+                      </span>                      
+                    </div>
+                  </div>
+      
+                </div>  
+              </div>
+            </span>
+            <div class="emgig"></div>
+            <div class="emgig"></div>
+          </div>
+            <div class="h-gigs-div">
+              <span *ngFor = "let x of list_gigs">
+                <div class="h-gig">
+                  <div class="h-gig-left">
+                    <div class="h-img"  (click)='gotoGig(x._id)'>
+                      <img src="{{x.gig_img_main}}" alt="">
+                    </div>
+                  </div>
+                  <div class="h-gig-right">
+                    <div class="h-gig-title-div">
+                      <h3 class="h-gig-title">
+                          {{x.title}}
+                      </h3>
+                    </div>
+                    <div class="h-gig-dets-div">
+  
+                      <div class="hg-det eq-h-det">
+                        <div class="auth-img">
+                          <div class="auth-img-core">
+                            <img src="{{x.profile_pic}}" alt="">
+                          </div>
+                        </div>
+                        <div class="auth-name">
+                            {{x.name}}
+                        </div>
+                      </div>
+                      <div class="hg-det eq-h-det">
+                          <img src="{{x.star1}}" alt="" width="15px" height="15px">
+                          <img src="{{x.star2}}" alt="" width="15px" height="15px">
+                          <img src="{{x.star3}}" alt="" width="15px" height="15px">
+                          <img src="{{x.star4}}" alt="" width="15px" height="15px">
+                          <img src="{{x.star5}}" alt="" width="15px" height="15px">
+                          ({{x.num_of_pro_com}})
+                      </div>
+                      <div class="hg-det eq-h-det">
+                        <span class="auth-ico"><i class="fas fa-users"></i></span>  
+                        <p class="com-p">
+                            {{x.num_of_pro_com}} Completed
+                        </p>
+                      </div>
+                      <div class="hg-det sm-h-det">
+                        <span class="heart-core">
+                          <!-- <span class="heart-ico">
+                            <i class="fas fa-heart"></i>
+                          </span> -->
+                          <span *ngIf="x.fav_status === true">
+                            <span class="heart-ico" (click)="addtoFav(x._id,x.user_id)">
+                              <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="20px" height="20px">
+                            </span>
+                          </span>
+                          <span *ngIf="x.fav_status === false">
+                            <span class="heart-ico" (click)="addtoFav(x._id,x.user_id)">
+                              <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="20px" height="20px">
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="hg-det sm-h-det">
+                        ${{x.pac_cos_sta}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <!-- <div class="h-gig">
+                <div class="h-gig-left">
+                  <div class="h-img">
+                    <img src="../../assets/img/gigs.PNG" alt="">
+                  </div>
+                </div>
+                <div class="h-gig-right">
+                  <div class="h-gig-title-div">
+                    <h3 class="h-gig-title">
+                      I will illustrate you desgin 3D model
+                    </h3>
+                  </div>
+                  <div class="h-gig-dets-div">
+
+                    <div class="hg-det eq-h-det">
+                      <div class="auth-img">
+                        <div class="auth-img-core">
+                          <img src="../../assets/img/leo.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="auth-name">
+                        Author name
+                      </div>
+                    </div>
+                    <div class="hg-det eq-h-det">
+
+                    </div>
+                    <div class="hg-det eq-h-det">
+                      <span class="auth-ico"><i class="fas fa-users"></i></span>  
+                      <p class="com-p">
+                        129 Completed
+                      </p>
+                    </div>
+                    <div class="hg-det sm-h-det">
+                      <span class="heart-core">
+                        <span class="heart-ico">
+                          <i class="fas fa-heart"></i>
+                        </span>
+                      </span>
+                    </div>
+                    <div class="hg-det sm-h-det">
+                      $14
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

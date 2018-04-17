@@ -1,0 +1,773 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+    <div class="width-control">
+        <div class="cg-core">
+            <div class="cg-back">
+                <div class="cg-one-helper helpers">
+
+                    <div class="helper-cg-img-div">
+                        <div class="helper-img-core">
+                            <img src="../../assets/img/cghi.png" alt="" class="center">
+                        </div>
+                    </div>
+                    <div class="helper-desc-div">
+                        <div class="h-desc-title-div">
+                            <h3 class="h-desc-title">
+                                Hi, FirstName! Lets get started listing your service.
+                            </h3>
+                        </div>
+                        <div class="h-desc-p-div">
+                            <p>
+                                Describe your service to really sell yourself and outline exactly what the job seeker will receive, and add photos and details.
+                            </p>
+                            <p>
+                                Tell buyers a bit about your process and deliverables
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cg-two-helper helpers">
+                    <div class="cg-two-helper-ico">
+
+                    </div>
+                </div>
+                <div class="cg-head">
+                    <div class="cg-h selected-cg-h" id="one-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-file-alt"></i>
+                        </span> Overview
+                    </div>
+                    <div class="cg-h" id="two-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-dollar-sign"></i>
+                        </span> Pricing
+                    </div>
+                    <div class="cg-h" id="three-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-question-circle"></i>
+                        </span> Extras and FAQs
+                    </div>
+                    <div class="cg-h" id="four-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-file-alt"></i>
+                        </span> Buyer instructions
+                    </div>
+                    <div class="cg-h" id="five-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-camera"></i>
+                        </span> Photos
+                    </div>
+                    <div class="cg-h" id="six-cg-h">
+                        <span class="cg-head-ico">
+                            <i class="fas fa-upload"></i>
+                        </span> Publish
+                    </div>
+                </div>
+                <div class="cg-body">
+                    <div class="cg-one cg-divs">
+                        <div class="cg-one-div">
+                            <div class="cg-one-left">
+                                Category
+                            </div>
+                            <div class="cg-one-right">
+                                <div class="top-inps">
+                                    <select class="c-gig-inputs1" id="c-gig-cat" name="category" [(ngModel)]="gig_category" (change)="showmore($event)">
+                                        <option disabled="true">Choose your Category</option>
+                                        <option value="rc">Resume/CV</option>
+                                        <option value="or">Cover Letters</option>
+                                        <option value="vr">LinkedIn Makeover</option>
+                                        <option value="lp">Selection Criteria</option>
+                                        <option value="rl">Reference Letter</option>
+                                    </select>
+                                    <select class="c-gig-inputs1 sub-cat" id="c-gig-cat" name="sub-category" [(ngModel)]="gig_sub_category">
+                                        <option disabled="true">None</option>
+                                        <option value="af">Accounting & Finance</option>
+                                        <option value="ao">Administration & Office Support</option>
+                                        <option value="aam">Advetising,Arts & MEdia</option>
+                                        <option value="bc">BPO & Customer Service</option>
+                                        <option value="ca">Construction & Architecture</option>
+                                        <option value="et">Education & Teaching</option>
+                                        <option value="fv">Farming & veteirnary</option>
+                                        <option value="gd">Governament & Defence</option>
+                                        <option value="ht">Hospitality & Tourisum</option>
+                                        <option value="hrr">Human Resources & Recruitment</option>
+                                        <option value="ict">Information & Communication Technology</option>
+                                        <option value="mtl">Manufacturing , Transport & Logistics</option>
+                                        <option value="l">Legal</option>
+                                        <option value="pm">Project Management</option>
+                                        <option value="rp">Realestate & Property</option>
+                                        <option value="sr">Sales & Retails</option>
+                                        <option value="ts">Trades & Services</option>
+                                        <option value="ce">CEO & Executives</option>
+                                        <option value="oj">Other Jobs</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left">
+                                Title
+                            </div>
+                            <div class="cg-one-right">
+                                <input type="text" class="title-input" maxlength="80" value="" [(ngModel)]="gig_title">
+                            </div>
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left">
+                                Description
+                            </div>
+                            <div class="cg-one-right">
+                                <textarea class="desc-txt-area" [(ngModel)]="gig_description"></textarea>
+                            </div>
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left">
+                                Skills required
+                            </div>
+                            <div class="cg-one-right">
+                                <div class="sk-row">
+                                    <div class="sk">
+                                        <label for="sk-one" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Email/Username Login
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-one" name="skill_check[]" value="email" (change)="handleChange($event)" [checked]="email">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="sk">
+                                        <label for="sk-two" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fas fa-sign-in-alt"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Scoial Loign
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-two" (change)="handleChange($event)" [checked]="profiles">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sk-row">
+                                    <div class="sk">
+                                        <label for="sk-three" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Profiles
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-three" (change)="handleChange($event)" [checked]="sharing">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="sk">
+                                        <label for="sk-four" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Rating/Reviews
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-four" (change)="handleChange($event)" [checked]="social_login">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sk-row">
+                                    <div class="sk">
+                                        <label for="sk-five" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fas fa-share-alt"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Sharing Functins
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-five" (change)="handleChange($event)" [checked]="rating">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="sk">
+                                        <label for="sk-six" class="sk-label">
+                                            <div class="sk-left">
+                                                <i class="fas fa-mobile"></i>
+                                            </div>
+                                            <div class="sk-mid">
+                                                <h5 class="sk-title">
+                                                    Mobile Optimized
+                                                </h5>
+                                                <h6 class="sk-desc">
+                                                    Login with email or user name
+                                                </h6>
+                                            </div>
+                                            <div class="sk-right">
+                                                <input type="checkbox" id="sk-six" (change)="handleChange($event)" [checked]="mobile">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="g-one-all-err"></div>
+                                <div class="nav-dots">
+                                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('second')">CONTINUE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cg two -->
+                    <div class="cg-two cg-divs">
+                        <div class="packages">
+                            <div class="packages-div">
+                                <table class="packages-table  table1">
+                                    <tr>
+                                        <td class="left-t-header" rowspan="4"></td>
+                                        <td class="left-t-header">
+                                            <span class="package-name">
+                                                <h3>STANDARD</h3>
+                                            </span>
+                                        </td>
+                                        <td id="fade-id" class="left-t-header">
+                                            <span class="package-name">
+                                                <h3>PREMIUM&nbsp;
+                                                    <input (click)="fade($event)" type="checkbox" class="fade-check" id="premium-fade-check" name="pre-fade-check" value="pre">
+                                                    <label for="premium-fade-check">
+                                                        <span></span>
+                                                    </label>
+                                                </h3>
+                                            </span>
+
+                                        </td>
+                                        <td id="fade-id" class="left-t-header">
+                                            <span class="package-name">
+                                                <h3>PRO&nbsp;
+                                                    <input (click)="fade($event)" type="checkbox" class="fade-check" id="pro-fade-check" name="pro-fade-check" value="pro">
+                                                    <label for="pro-fade-check">
+                                                        <span></span>
+                                                    </label>
+                                                </h3>
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                    <tr id="package-cost-tr">
+                                        <td>
+                                            <input type="number" pattern="\d*" maxlength="4" class="price-select" id="standard-price" name="standard-price" placeholder="Cost of Your Package"
+                                                [(ngModel)]="pac_cos_sta">
+                                        </td>
+
+                                        <td>
+                                            <input type="number" pattern="\d*" maxlength="4" class="price-select" id="premium-price" name="premium-price" placeholder="Cost of Your Package"
+                                                [(ngModel)]="pac_cos_pre" maxlength="4">
+                                        </td>
+
+                                        <td class="gig-fade">
+
+                                            <input type="number" pattern="\d*" maxlength="4" class="price-select" id="pro-price" name="pro-price" placeholder="Cost of Your Package"
+                                                [(ngModel)]="pac_cos_pro" maxlength="4">
+
+                                        </td>
+
+                                    </tr>
+                                    <tr id="package-details-tr">
+
+                                        <td>
+                                            <textarea class="package-details" id="std-details" name="std-details" placeholder="Describe the details of your offering"
+                                                [(ngModel)]="pac_det_sta"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea class="package-details" id="pre-details" name="pre-details" placeholder="Describe the details of your offering"
+                                                [(ngModel)]="pac_det_pre"></textarea>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <!-- <div class="gig-fade"> -->
+                                            <textarea class="package-details" id="pro-details" name="pro-details" placeholder="Describe the details of your offering"
+                                                [(ngModel)]="pac_det_pro"></textarea>
+                                            <!-- </div> -->
+                                        </td>
+                                    </tr>
+                                    <tr id="package-delivery-tr">
+                                        <td>
+                                            <select class="delivery-select" id="standard-delivery" name="standard-delivery" [(ngModel)]="pac_del_sta">
+                                                <option selected="true" value="1">1 Days Delivery</option>
+                                                <option value="2">2 Days Delivery</option>
+                                                <option value="3">3 Days Delivery</option>
+                                                <option value="4">4 Days Delivery</option>
+                                                <option value="5">5 Days Delivery</option>
+                                                <option value="6">6 Days Delivery</option>
+                                                <option value="7">7 Days Delivery</option>
+                                                <option value="8">8 Days Delivery</option>
+                                                <option value="9">9 Days Delivery</option>
+                                                <option value="10">10 Days Delivery</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <select class="delivery-select" id="premium-delivery" name="premium-delivery" [(ngModel)]="pac_del_pre">
+                                                <option selected="true" value="1">1 Days Delivery</option>
+                                                <option value="2">2 Days Delivery</option>
+                                                <option value="3">3 Days Delivery</option>
+                                                <option value="4">4 Days Delivery</option>
+                                                <option value="5">5 Days Delivery</option>
+                                                <option value="6">6 Days Delivery</option>
+                                                <option value="7">7 Days Delivery</option>
+                                                <option value="8">8 Days Delivery</option>
+                                                <option value="9">9 Days Delivery</option>
+                                                <option value="10">10 Days Delivery</option>
+                                            </select>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <select class="delivery-select" id="pro-delivery" name="pro-delivery" [(ngModel)]="pac_del_pro">
+                                                <option selected="true" value="1">1 Days Delivery</option>
+                                                <option value="2">2 Days Delivery</option>
+                                                <option value="3">3 Days Delivery</option>
+                                                <option value="4">4 Days Delivery</option>
+                                                <option value="5">5 Days Delivery</option>
+                                                <option value="6">6 Days Delivery</option>
+                                                <option value="7">7 Days Delivery</option>
+                                                <option value="8">8 Days Delivery</option>
+                                                <option value="9">9 Days Delivery</option>
+                                                <option value="10">10 Days Delivery</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr id="package-revisions-tr">
+                                        <td class="left-t-header no-top-border">
+                                            <div class="l-t-header">Revisions</div>
+                                        </td>
+                                        <td>
+                                            <select class="revisions" id="s-revisions" name="std-revisions" [(ngModel)]="rev_sta">
+                                                <option selected="true" value="select" disabled>Select</option>
+                                                <option value="1">1 </option>
+                                                <option value="2">2 </option>
+                                                <option value="3">3 </option>
+                                                <option value="4">4 </option>
+                                                <option value="5">5 </option>
+                                                <option value="6">6 </option>
+                                                <option value="7">7 </option>
+                                                <option value="8">8 </option>
+                                                <option value="9">9 </option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="revisions" id="pre-revisions" name="pre-revisions" [(ngModel)]="rev_pre">
+                                                <option selected="true" value="select" disabled>Select</option>
+                                                <option value="1">1 </option>
+                                                <option value="2">2 </option>
+                                                <option value="3">3 </option>
+                                                <option value="4">4 </option>
+                                                <option value="5">5 </option>
+                                                <option value="6">6 </option>
+                                                <option value="7">7 </option>
+                                                <option value="8">8 </option>
+                                                <option value="9">9 </option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <select class="revisions" id="pro-revisions" name="pro-revisions" [(ngModel)]="rev_pro">
+                                                <option selected="true" value="select" disabled>Select</option>
+                                                <option value="1">1 </option>
+                                                <option value="2">2 </option>
+                                                <option value="3">3 </option>
+                                                <option value="4">4 </option>
+                                                <option value="5">5 </option>
+                                                <option value="6">6 </option>
+                                                <option value="7">7 </option>
+                                                <option value="8">8 </option>
+                                                <option value="9">9 </option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr id="package-words-tr">
+                                        <td class="left-t-header">
+                                            <div class="l-t-header">File Format</div>
+                                        </td>
+                                        <td>
+                                            <select class="words-included" id="std-words" name="std-words" [(ngModel)]="words_sta">
+                                                <option value="word">Word</option>
+                                                <option value="pdf">PDF</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="words-included" id="pre-words" name="pre-words" [(ngModel)]="words_pre">
+                                                <option value="word">Word</option>
+                                                <option value="pdf">PDF</option>
+                                            </select>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <select class="words-included" id="pro-words" name="pro-words" [(ngModel)]="words_pro">
+                                                <option value="word">Word</option>
+                                                <option value="pdf">PDF</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr id="package-seperate-files-tr">
+                                        <td class="left-t-header">
+                                            <div class="l-t-header">Phone Consultation</div>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="sep-files-check" id="standard-sep-check" name="std-sep-check" [(ngModel)]="sf_sta">
+                                            <label for="standard-sep-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="sep-files-check" id="premium-sep-check" name="pre-sep-check" [(ngModel)]="sf_pre">
+                                            <label for="premium-sep-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <input type="checkbox" class="sep-files-check" id="pro-sep-check" name="pro-sep-check" [(ngModel)]="sf_pro">
+                                            <label for="pro-sep-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr id="package-hq-files-tr">
+                                        <td class="left-t-header">
+                                            <div class="l-t-header">Cover Letter</div>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="hq-files-check" id="std-hq-check" name="std-hq-check" [(ngModel)]="hq_sta">
+                                            <label for="std-hq-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="hq-files-check" id="pre-hq-check" name="pre-hq-check" [(ngModel)]="hq_pre">
+                                            <label for="pre-hq-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td class="gig-fade">
+                                            <input type="checkbox" class="hq-files-check" id="pro-hq-check" name="pro-hq-check" [(ngModel)]="hq_pro">
+                                            <label for="pro-hq-check">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="gig-fade-back"></div>
+                        <div class="gig-fade-back-one"></div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="g-2-all-err"></div>
+                                <div class="nav-dots">
+                                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('third')">CONTINUE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cg three -->
+                    <div class="cg-three cg-divs">
+                        <div class="extras-div">
+                            <h4 class="cg-title">Offer extras to job seekers (Optional)</h4>
+                            <div class="extras-core">
+                                <div class="extra">
+                                    <div class="ex-left">
+                                        <input type="checkbox" class="ex-check" value="check1" (change)="handleChange($event)">
+                                    </div>
+                                    <div class="ex-mid">
+                                        <div class="ex-ribbon">
+                                            Fast delivery
+                                        </div>
+                                        <div class="ex-desc">
+                                            I will deliver all work for an extra
+                                        </div>
+                                    </div>
+                                    <div class="ex-right">
+                                        <div class="ex-cost-div">
+                                            <div class="ex-cost-left">
+                                                $
+                                            </div>
+                                            <div class="ex-cost-right">
+                                                <input type="number" class="ex-cost-right-input" [(ngModel)]="doller1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="extra-next">
+                                    <div class="cross">
+                                        <div class="c-in">
+                                            X
+                                        </div>
+                                    </div>
+                                    <div class="ext-des">
+                                        <input type="text" class="ex-check" placeholder="Describe the type of your extra" id="des1" (change)="handleChange($event)">
+                                    </div>
+                                    <div class="ex-right">
+                                        <div class="ex-cost-div">
+                                            <div class="ex-cost-left">
+                                                $
+                                            </div>
+                                            <div class="ex-cost-right">
+                                                <input type="number" class="ex-cost-right-input" id="cost1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-ex-div">
+                                <button class="add-gig-ex-btn" (click)="addExtra()">
+                                    + Add gig extra
+                                </button>
+                            </div>
+                        </div>
+                        <div class="faq-div">
+                            <h4 class="cg-title">Frequently Asked Questions (Optional)</h4>
+                            <div class="faq-core">
+                                <div class="faq">
+                                    <label class="faq-q-label">
+                                        <div class="faq-name">Question</div>
+                                        <input type="text" class="faq-q-input" id="q1" maxlength="94">
+                                    </label>
+                                    <label class="faq-a-label">
+                                        <div class="faq-name">Answer</div>
+                                        <textarea class="faq-a-input" id="a1"></textarea>
+                                    </label>
+                                </div>
+                                <div id="g-3-all-err"></div>
+                                <div class="add-ex-div">
+                                    <button class="add-gig-ex-btn" (click)="addFaq()">
+                                        + Add an FAQ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="g-one-all-err"></div>
+                                <div class="nav-dots">
+                                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('fourth')">CONTINUE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cg four -->
+                    <div class="cg-four cg-divs">
+
+                        <div class="cg-four-core">
+                            <div class="cg-four-top">
+                                <span class="cg-four-t-ico">
+                                    <i class="fas fa-file-alt"></i>
+                                </span>
+                                <h3 class="cg-four-title">
+                                    Tell your buyer what you need to get started.
+                                </h3>
+                            </div>
+                            <div class="req-core">
+                                <h6>Requirements</h6>
+                                <textarea class="req-txt-area author-work" [(ngModel)]="author_work"></textarea>
+                                <div class="req-count-div">
+                                    0/450 Characters
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="auth-work-err"></div>
+                                <div class="nav-dots">
+                                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('fifth')">CONTINUE</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- cg five -->
+                    <div class="cg-five cg-divs">
+                        <h4 class="cg-five-title">Photos</h4>
+                        <h6 class="cg-five-cap">For the best results, listing photos should be atleast 1000 pixels wide.</h6>
+
+                        <div class="photos-core">
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('1')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange1($event)" accept="image/*" hidden>
+                                    <span id="file_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_one" width="140px" height="140px">
+                                </label>
+                            </div>
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('2')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange2($event)" accept="image/*" hidden>
+                                    <span id="file_two_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_two" width="140px" height="140px">
+                                </label>
+                            </div>
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('3')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange3($event)" accept="image/*" hidden>
+                                    <span id="file_three_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_three" width="140px" height="140px">
+                                </label>
+                            </div>
+
+                            <br>
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('4')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange4($event)" accept="image/*" hidden>
+                                    <span id="file_four_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_four" width="140px" height="140px">
+                                </label>
+                            </div>
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('5')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange5($event)" accept="image/*" hidden>
+                                    <span id="file_five_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_five" width="140px" height="140px">
+                                </label>
+                            </div>
+                            <div class="pic-div">
+                                <div class="close-pic" (click)="btn('6')">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <label class="pic">
+                                    <input type="file" (change)="fileChange6($event)" accept="image/*" hidden>
+                                    <span id="file_six_label">
+                                        <div class="pic-label-ico">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="pic-label-title">
+                                            Add a photo
+                                        </div>
+                                    </span>
+                                    <img src="" alt="" class="add-img" id="gig_img_six" width="140px" height="140px">
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="g-4-all-errr"></div>
+                                <div class="nav-dots">
+                                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('sixth')">CONTINUE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cg six -->
+                    <div class="cg-six cg-divs">
+                        <div class="cg-six-core">
+                            <h5 class="cg-six-title">
+                                Almost there...
+                            </h5>
+                            <h6 class="cg-six-cap">
+                                Let's publish your Gig and get some buyers rolling in
+                            </h6>
+                        </div>
+                        <p class="cg-fee">
+                            *A 20% fee will be charged each time your service is purchased, calculated on the total value for each order received. Review
+                            our
+                            <span> Fees and Charges </span> page for details.
+                        </p>
+                        <div class="cg-one-div">
+                            <div class="cg-one-left"></div>
+                            <div class="cg-one-right final-btn-cg">
+                                <div class="g-err" id="g-one-all-err"></div>
+                                <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('publish')">PUBLISH</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,202 @@
+.set-core{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.set-w-control{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-direction: column;
+}
+.set-core-main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+}
+.set-core-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: row;
+    width:40%;
+    height: auto;
+    margin-top: 20px;
+}
+.set-w-p{
+    font-size: 75%;
+    color: #888;
+}
+.set-core-box{
+    border:1px solid #ddd;
+    padding: 7px 0px;
+    left: 120%;
+    top: -89px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.set-core-change{
+    font-size: 80%;
+    text-align: center;
+    left: 10px;
+    
+}
+.set-core-right{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width:62%;
+    left:10px ;
+    padding: 10px 10px;
+    
+  
+}
+.set-core-title-h{
+    font-size: 90%;
+    top: -5px;
+    color: #888;
+}
+#img-pro{
+    display: none;
+}
+.set-w-img-1{
+    top:-5px;
+    width: 30px;
+    height:30px;
+}
+.set-core-title{
+    padding: 1px 1px;
+}
+ 
+.set-w-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+    top:-25px;
+   
+}
+.set-w-form-group{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+
+}
+.set-w-form-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+   
+}
+.set-w-fname{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+    width: 100%;
+}
+.set-w-name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: row;
+    width:175%;
+} 
+.name{
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    padding: 5px 0px;
+}
+
+
+.set-w-email{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+    width: 100%;
+    left: 165px;
+}
+.set-w-email-1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: row;
+    width:175%;
+} 
+.email{
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    padding: 5px 0px;
+}
+.set-w-form-2{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    top:10px;
+}
+.set-w-form-3{
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    flex-direction: column;
+   
+}
+.set-w-some{
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    flex-direction: row;
+    top:40px;
+}
+.con{
+    font-size: 90%;
+    color: #888;
+    font-weight: 400;
+}
+input[type=text] {
+    width: 95%;
+    padding: 10px 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.set-w-text{
+    left: 110px;
+   
+}
+textarea{
+    border-radius: 5px 5px;
+    resize: none;
+    padding: 8px 8px;
+}
+.text{
+    padding: 3px 0px;
+    color: #888;
+    font-size: 16px;
+    text-align: justify;
+}
+.btn-save{
+    background-color: #ec5252;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 30px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    }

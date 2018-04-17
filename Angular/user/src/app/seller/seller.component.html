@@ -1,0 +1,590 @@
+<div class="main-container">
+
+  <div class="top-back-img">
+    <div class="top-back-edit-div">
+      <h6 class="top-back-edit-title">
+        This is a preview of your profile!
+      </h6>
+      <div class="top-back-edit-icon-div">
+        <span class="top-back-edit-ico">
+          <i class="fas fa-edit"></i>
+        </span>
+        <h6 class="edit-profile-title">
+          EDIT PROFILE
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="main-core-vp">
+    <div class="width-control">
+      <div class="seller-core">
+        <div class="seller-core-left">
+          <div class="seller-core-left-img-div">
+            <div class="s-c-l-img-core">
+              <img src="{{profile_pic}}" alt="" class="seller-core-left-img">
+            </div>
+          </div>
+          <div class="seller-core-left-icons">
+            <ul>
+              <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                <i class="fas fa-dollar-sign"></i>
+              </li>
+              <li class="s-c-left-icons-ico">
+                <i class="fas fa-envelope"></i>
+              </li>
+              <li class="s-c-left-icons-ico">
+                <i class="fas fa-user"></i>
+              </li>
+              <li class="s-c-left-icons-ico">
+                <i class="fas fa-phone"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="seller-core-left-dets">
+            <ul>
+              <li>
+                <span class="s-c-l-dets-ico">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <span class="s-c-l-key">
+                  From :
+                </span>
+                <span class="s-c-l-val">
+                  {{country}} {{city}}
+                </span>
+              </li>
+              <li>
+                <span class="s-c-l-dets-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="s-c-l-key">
+                  Member Since
+                </span>
+                <span class="s-c-l-val">
+                  {{join_date}}
+                </span>
+              </li>
+              <li>
+                <span class="s-c-l-dets-ico">
+                  <i class="fas fa-clock"></i>
+                </span>
+                <span class="s-c-l-key">
+                  Speaks:
+                </span>
+                <span class="s-c-l-val">
+                  English
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="seller-core-middle">
+          <div class="s-c-m-core">
+            <div class="s-c-m-top">
+              <h2 class="s-c-m-c-title">
+                Hey, I'm {{name | titlecase}}
+              </h2>
+              <p class="s-c-m-c-p">
+                {{description}}
+              </p>
+              <p class="s-c-m-c-p">
+                {{description}}
+              </p>
+              <span class="s-c-m-sh-m">
+
+              </span>
+            </div>
+            <div class="s-c-m-btm">
+              <div class="s-c-m-b-det">
+                <div class="s-c-m-b-d-top">
+                  <h5 class="s-c-m-d-head">
+                    {{comp_jobs_num}}
+                  </h5>
+                </div>
+                <div class="s-c-m-b-d-btm">
+                  <h6 class="s-c-m-d-cap">
+                    Jobs Done
+                  </h6>
+                </div>
+              </div>
+              <div class="s-c-m-b-det">
+                <div class="s-c-m-b-d-top">
+                  <img src="{{top_rat[0]}}" alt="" width="13px" height="13px">
+                  <img src="{{top_rat[1]}}" alt="" width="13px" height="13px" v>
+                  <img src="{{top_rat[2]}}" alt="" width="13px" height="13px">
+                  <img src="{{top_rat[3]}}" alt="" width="13px" height="13px">
+                  <img src="{{top_rat[4]}}" alt="" width="13px" height="13px"> ({{f_rev_len}})
+                </div>
+                <div class="s-c-m-b-d-btm">
+                  <h6 class="s-c-m-d-cap">
+                    Reviews
+                  </h6>
+                </div>
+              </div>
+              <div class="s-c-m-b-det">
+                <div class="s-c-m-b-d-top">
+                  <h5 class="s-c-m-d-head">
+                    ${{f_total_earnings}}
+                  </h5>
+                </div>
+                <div class="s-c-m-b-d-btm">
+                  <h6 class="s-c-m-d-cap">
+                    Earnings
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seller-core-right">
+          <div class="s-c-r-core">
+            <h5 class="s-c-r-title">
+              SEND A PRIVATE MESSAGE
+            </h5>
+            <textarea class="s-c-r-txt-area">Hi Miracles Group, I noticed your profile and would like to offer you my project. We can discuss any details over chat.
+            </textarea>
+
+            <button class="s-c-r-send-btn" (click)="go_to_inbox()">
+              Send a Private Message
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="svp">
+        <h2 class="u-sub-heads">
+          MY SERVICES
+        </h2>
+        <div class="svp-core">
+          <div class="svp-left">
+            <div class="svp-left-core">
+              <div class="svp-left-core-top">
+                <ul class="svp-left-ul">
+                  <li (click)="gigs_get('all')">
+                    <div class="svp-li-left seleceted-svp-li">
+                      All
+                    </div>
+                    <div class="svp-li-right">
+                      {{all_len}}
+                    </div>
+                  </li>
+
+                  <span *ngIf="rc_num>0">
+                    <li (click)="gigs_get('rc')">
+                      <div class="svp-li-left">
+                        Resumes and cover letters
+                      </div>
+                      <div class="svp-li-right">
+                        {{ rc_num }}
+                      </div>
+                    </li>
+                  </span>
+
+                  <span *ngIf="or_num > 0">
+                    <li (click)="gigs_get('or')">
+                      <div class="svp-li-left">
+                        Online Resumes
+                      </div>
+                      <div class="svp-li-right">
+                        {{or_num}}
+                      </div>
+                    </li>
+                  </span>
+
+                  <span *ngIf="vr_num > 0">
+                    <li (click)="gigs_get('vr')">
+                      <div class="svp-li-left">
+                        Visual Resumes
+                      </div>
+                      <div class="svp-li-right">
+                        {{vr_num}}
+                      </div>
+                    </li>
+                  </span>
+
+                  <span *ngIf="lp_num > 0">
+                    <li (click)="gigs_get('lp')">
+                      <div class="svp-li-left">
+                        LinkedIn Profiles
+                      </div>
+                      <div class="svp-li-right">
+                        {{lp_num}}
+                      </div>
+                    </li>
+                  </span>
+
+                  <span *ngIf="rl_num > 0">
+                    <li (click)="gigs_get('rl')">
+                      <div class="svp-li-left">
+                        Reference Letters
+                      </div>
+                      <div class="svp-li-right">
+                        {{rl_num}}
+                      </div>
+                    </li>
+                  </span>
+                </ul>
+              </div>
+              <div class="svp-left-core-btm">
+                <button class="req-c-order-btn" (click)='openDB()'>
+                  Request Custom Order
+                </button>
+                <button class="contact-shop-owner-btn" (click)=" go_to_inbox()">
+                  Contact Shop Owner
+                </button>
+                <div class="report-div">
+                  <button class="report-btn">
+                    Report this shop to Etsy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="svp-right">
+            <div class="gigs-core">
+              <!-- <span> -->
+              <span *ngFor="let x of gigs">
+                <div class="gig">
+                  <div class="gig-display">
+                    <div class="gig-img" (click)=" gotoGig(x._id)">
+                      <img src="{{x.gig_img_main}}" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="gig-dets">
+                      <div class="gig-title-div">
+                        <h3 class="gig-title">
+                          {{x.title.substr(0,59)}}...
+                        </h3>
+                      </div>
+                      <div class="gig-author-name-div">
+                        <h4 class="gig-author-name">
+                          By {{x.name}}
+                        </h4>
+                      </div>
+                      <div class="gig-rating-div">
+                        <div class="gig-rating-core">
+                          <img src="../assets/star-on.png" alt="" width="12px" height="12px">
+                          <img src="../assets/star-on.png" alt="" width="12px" height="12px">
+                          <img src="../assets/star-on.png" alt="" width="12px" height="12px">
+                          <img src="../assets/star-off.png" alt="" width="12px" height="12px">
+                          <img src="../assets/star-off.png" alt="" width="12px" height="12px">
+                        </div>
+                      </div>
+                      <div class="gig-stats-div">
+                        <div class="gig-stats-left">
+                          <span class="gig-stat-icon">
+                            <i class="fas fa-users"></i>
+                          </span>
+                          <p>{{x.jobes_done}} Completed</p>
+                        </div>
+                        <div class="gig-stats-right">
+                          <p>STARTING AT
+                            <span class="gig-price">${{x.pac_cos_sta}}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="gig-hover">
+                    <div class="gig-hover-title-div">
+                      <h3 class="gig-hover-title">
+                        {{x.title}}
+                      </h3>
+                    </div>
+                    <div class="gig-hover-n-tags-div">
+                      <div class="gig-hover-best-seller-tag-div">
+                        <span class="gig-hover-best-seller-tag">
+                          BEST SELLER
+                        </span>
+                      </div>
+                      <div class="gig-hover-tags-tags-div">
+                        in
+                        <span class="gig-tags-tag">{{x.category}}</span>
+                        <span class="gig-tags-cat">Business</span>
+                      </div>
+                    </div>
+                    <div class="gig-hover-stats-div">
+                      <div class="gig-hover-stat-div">
+                        <span class="gig-hover-stat-ico">
+                          <i class="fas fa-clock"></i>
+                        </span>
+                        <h6 class="gig-hover-stat-stat">{{x.pac_del_sta}} Days Delivery</h6>
+                      </div>
+                      <div class="gig-hover-stat-div">
+                        <span class="gig-hover-stat-ico">
+                          <i class="fas fa-sync"></i>
+                        </span>
+                        <h6 class="gig-hover-stat-stat">{{x.rev_sta}} Revisions</h6>
+                      </div>
+                    </div>
+                    <div class="gig-hover-desc-div">
+                      <p class="gig-hover-desc">
+                        {{x.description.substr(0,150)}}...
+                      </p>
+                    </div>
+
+                    <div class="gig-hover-tags-div">
+                      <div class="gig-hover-tags-core">
+                        <span class="gig-hover-tag">
+                          ux design
+                        </span>
+                        <span class="gig-hover-tag">
+                          ui design
+                        </span>
+                        <span class="gig-hover-tag">
+                          web design
+                        </span>
+                        <span class="gig-hover-tag">
+                          graphic design
+                        </span>
+                        <span class="gig-hover-tag">
+                          app design
+                        </span>
+                        <span class="gig-hover-tag">
+                          dashboard design
+                        </span>
+                        <span class="gig-hover-tag">
+                          landing page design
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="gig-hover-add-btn-div">
+                      <button class="gig-hover-add-btn" (click)=" gotoGig([x._id])">
+                        Veiw Details
+                      </button>
+                      <div class="gig-hover-fav-btn-div">
+                        <!-- <span class="gig-hover-fav-btn">
+                                <i class="fas fa-heart"></i>
+                              </span> -->
+                        <span *ngIf="x.fav_status == false">
+                          <span class="gig-hover-fav-btn">
+                            <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(x._id,$event,x)">
+                          </span>
+                        </span>
+                        <span *ngIf="x.fav_status == true">
+                          <span class="gig-hover-fav-btn">
+                            <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(x._id,$event,x)">
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+              <!-- </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tvp">
+        <div class="reviews-div">
+          <div class="rev-left">
+            <h2 class="u-sub-heads">REVIEWS</h2>
+          </div>
+          <div class="rev-right">
+
+            <div class="rev-top">
+              <div class="rt-left">
+                <h6>Average Rating</h6>
+                <span class="avg-rat-num">
+                  {{f_avg_rat}}
+                </span>
+                <div class="rev-stars">
+                  <img src="{{top_rat[0]}}" alt="" width="20px" height="20px">
+                  <img src="{{top_rat[1]}}" alt="" width="20px" height="20px" v>
+                  <img src="{{top_rat[2]}}" alt="" width="20px" height="20px">
+                  <img src="{{top_rat[3]}}" alt="" width="20px" height="20px">
+                  <img src="{{top_rat[4]}}" alt="" width="20px" height="20px">
+                  <span class="num-ratings">{{f_rev_len}} Ratings</span>
+                </div>
+              </div>
+              <div class="rt-right">
+                <h6>Details</h6>
+
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    5 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="f_five_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    4 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="f_four_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    3 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="f_three_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    2 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="f_two_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    1 star
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="f_one_rat"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div *ngFor="let rev of f_rev">
+              <div class="review">
+                <div class="rew-top-div">
+                  <div class="rew-img">
+                    <img src="{{rev.profile_pic}}" alt="">
+                  </div>
+                  <div class="rew-dets">
+                    <div class="rw-name">
+                      {{rev.buyer_name}}
+                    </div>
+                    <div class="rw-time">
+                      Posted {{rev.date}}
+                    </div>
+                  </div>
+                </div>
+                <div class="rew-stars-div">
+                  <img src="{{rev.raty[0]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[1]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[2]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[3]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[4]}}" alt="" width="16px" height="16px">
+                </div>
+                <div class="rew-review">
+                  <p>
+                    {{rev.review}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="review">
+                  <div class="rew-top-div">
+                    <div class="rew-img">
+                      <img src="../../assets/img/leo.jpg" alt="">
+                    </div>
+                    <div class="rew-dets">
+                      <div class="rw-name">
+                        First Name
+                      </div>
+                      <div class="rw-time">
+                        Posted 2 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rew-stars-div">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                  </div>
+                  <div class="rew-review">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis deserunt quos ea fuga odit aliquam necessitatibus ducimus quae eveniet ex, placeat molestiae corrupti asperiores ipsum praesentium eligendi provident nihil. Nam.
+                    </p>
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="rew-top-div">
+                    <div class="rew-img">
+                      <img src="../../assets/img/leo.jpg" alt="">
+                    </div>
+                    <div class="rew-dets">
+                      <div class="rw-name">
+                        First Name
+                      </div>
+                      <div class="rw-time">
+                        Posted 2 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rew-stars-div">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                      <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                  </div>
+                  <div class="rew-review">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis deserunt quos ea fuga odit aliquam necessitatibus ducimus quae eveniet ex, placeat molestiae corrupti asperiores ipsum praesentium eligendi provident nihil. Nam.
+                    </p>
+                  </div>
+                </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cdb">
+    <div class="wb">
+      <div class="wb-top">
+        <h4 class="wb-head">Request a Custom Order</h4>
+        <span class="close-ico" (click)='closeDB()'>
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+      <div class="wb-main">
+        <div class="wb-main-top">
+          <h6>What are you looking for ?</h6>
+          <textarea class="wb-txt" [(ngModel)]="custom.description"></textarea>
+          <div class="atch-file-div">
+            <label for="c-file">
+              <input type="file" name="c-file" id="c-file" hidden (change)="fileChange($event)" accept=".jpg,.png">
+              <span class="file-ico"><i class="fas fa-paperclip"></i></span>&nbsp; Attach file
+            </label>
+            <p class="max-size-p">
+              Max Size 30MB
+            </p>
+          </div>
+        </div>
+        <div class="wb-main-btm">
+          <div class="wbmb-left">
+            <h6>Why do you need it ? <span class="blur">Optional</span></h6>
+            <my-date-picker name="mydate" [options]="myDatePickerOptions"
+            [(ngModel)]="cus_delivery_date" required></my-date-picker>
+          </div>&nbsp;
+          <div class="wbmb-right">
+              <h6>What is your budget for this service ?<span class="blur">Optional</span></h6>
+              <input type="text" [(ngModel)]="custom.budget">
+          </div>
+        </div>
+      </div>
+      <div class="wb-btm">
+        <button class="send-c-order-btn" (click)="post_custom_order()">
+          Send Custom Order
+        </button>
+      </div>
+    </div>
+    <div class="dark-back">
+        <div class="spinner">
+          
+        </div>
+    </div>
+  </div>

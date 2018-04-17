@@ -1,0 +1,280 @@
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="page-head">
+      YOUR ORDER
+    </h2>
+    <div class="checkout-core">
+      <div class="order-dets-div">
+        <h3 class="sec-head">1. Order Details</h3>
+        <div class="order-dets-core">
+          <div class="o-d-left">
+            <div class="gig">
+              <div class="gig-display">
+                <div class="gig-img">
+                  <img src="{{gig_img}}" alt="" width="100%" height="100%">
+                </div>
+                <div class="gig-dets">
+                  <div class="gig-title-div">
+                    <h3 class="gig-title">
+                      {{gig_title}}
+                    </h3>
+                  </div>
+                  <div class="gig-author-name-div">
+                    <h4 class="gig-author-name">
+                      By {{name}}
+                    </h4>
+                  </div>
+                  <div class="gig-rating-div">
+                    <div class="gig-rating-core">
+                      <img src="{{raty1}}" alt="" width="12px" height="12px">
+                      <img src="{{raty2}}" alt="" width="12px" height="12px">
+                      <img src="{{raty3}}" alt="" width="12px" height="12px">
+                      <img src="{{raty4}}" alt="" width="12px" height="12px"> 
+                      <img src="{{raty5}}" alt="" width="12px" height="12px" >
+                    </div>
+                  </div>
+                  <div class="gig-stats-div">
+                    <div class="gig-stats-left">
+                      <span class="gig-stat-icon">
+                        <i class="fas fa-users"></i>
+                      </span>
+                      <p>{{jobs_done}} Completed</p>
+                    </div>
+                    <div class="gig-stats-right">
+                        <p>STARTING AT  <span class="gig-price">${{selected_price}}</span> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="gig-hover">
+                <div class="gig-hover-title-div">
+                  <h3 class="gig-hover-title">
+                    {{gig_title}}
+                  </h3>
+                </div>
+                <div class="gig-hover-n-tags-div">
+                  <div class="gig-hover-best-seller-tag-div">
+                    <span class="gig-hover-best-seller-tag">
+                      BEST SELLER
+                    </span>
+                  </div>
+                  <div class="gig-hover-tags-tags-div">
+                    in <span class="gig-tags-tag">Deep Learning</span> <span class="gig-tags-cat">Business</span>
+                  </div>
+                </div>
+                <div class="gig-hover-stats-div">
+                  <div class="gig-hover-stat-div">
+                    <span class="gig-hover-stat-ico">
+                        <i class="fas fa-clock"></i>
+                    </span>
+                    <h6 class="gig-hover-stat-stat">20 Days Delivery</h6>
+                  </div>
+                  <div class="gig-hover-stat-div">
+                    <span class="gig-hover-stat-ico">
+                        <i class="fas fa-sync"></i>
+                    </span>
+                    <h6 class="gig-hover-stat-stat">3 Revisions</h6>
+                  </div>
+                </div>
+                <div class="gig-hover-desc-div">
+                  <p class="gig-hover-desc">
+                    Learn to create Deep Learning Algorithms in Python from two Machine Learning &amp; Data Science experts. Templates included.
+                  </p>
+                </div>
+    
+                <div class="gig-hover-tags-div">
+                  <div class="gig-hover-tags-core">
+                    <span class="gig-hover-tag">
+                      ux design
+                    </span>
+                    <span class="gig-hover-tag">
+                      ui design
+                    </span>
+                    <span class="gig-hover-tag">
+                      web design
+                    </span>
+                    <span class="gig-hover-tag">
+                      graphic design
+                    </span>
+                    <span class="gig-hover-tag">
+                      app design
+                    </span>
+                    <span class="gig-hover-tag">
+                      dashboard design
+                    </span>
+                    <span class="gig-hover-tag">
+                      landing page design
+                    </span>
+                  </div>
+                </div>
+    
+                <div class="gig-hover-add-btn-div">
+                  <button class="gig-hover-add-btn">
+                    Add To Cart
+                  </button>
+                  <div class="gig-hover-fav-btn-div">
+                    <span class="gig-hover-fav-btn">
+                      <i class="fas fa-heart"></i>
+                    </span>
+                  </div>
+                </div>
+    
+              </div>   -->
+            </div>
+          </div>
+          <div class="o-d-right">
+            <div class="o-d-r-core">
+              <div class="o-d-div">
+                <div class="o-d-d-heads-div">
+                  <div class="o-d-d-left-div">
+                    <h5 class="o-d-d-head">DESCRIPTION</h5>
+                  </div>
+                  <div class="o-d-d-right-div">
+                    <h5 class="o-d-d-head">PRICE</h5>
+                  </div>
+                </div>
+                <div class="o-d-d-dets-div">
+                  <div class="o-d-d-dets-left">
+                    <p class="o-d-d-dets-p">
+                      {{description}}
+                    </p>
+                  </div>
+                  <div class="o-d-d-dets-right">
+                    <div class="price-div selected-price">
+                      <div class="top-dollar">
+                        $
+                      </div>
+                      <div class="price-number">
+                        {{selected_price}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Extras -->
+              <div class="o-d-div">
+                <div class="o-d-d-heads-div">
+                  <div class="o-d-d-left-div">
+                    <h5 class="o-d-d-head">EXTRAS</h5>
+                  </div>
+                  <div class="o-d-d-right-div">
+                    <h5 class="o-d-d-head">&nbsp;</h5>
+                  </div>
+                </div>
+                <div *ngFor="let extra of selected_extras ; let i = index">
+                <div class="o-d-d-dets-div">
+                    <div class="o-d-d-dets-left">
+                      <div class="extras-d-dets-core">
+                        <div class="extras-d-dets-check-div">
+                          <input type='checkbox' name='thing' value='{{extra._id}}' id="checked{{i}}" (change)="onchange($event)" [checked]="true"/>
+                        </div>
+                        <p class="o-d-d-dets-p">
+                          {{extra.e_description}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="o-d-d-dets-right">
+                      <div class="price-div selected-price">
+                        <div class="top-dollar">
+                          $
+                        </div>
+                        <div class="price-number">
+                          {{extra.price}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="o-d-d-dets-div price-o-d-div">
+                <div class="price-o-d-left">
+                  Service Fee &nbsp; <span class="ser-fee-ico">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                </div>
+                <div class="price-o-d-right">
+                  <div class="price-div">
+                    <div class="top-dollar">
+                      $
+                    </div>
+                    <div class="price-number">
+                      5%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="o-d-d-dets-div price-o-d-div">
+                <div class="price-o-d-left">
+                  Total
+                </div>
+                <div class="price-o-d-right">
+                  <div class="price-div">
+                    <div class="top-dollar">
+                      $
+                    </div>
+                    <div class="price-number">
+                      {{total_amount}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="provide-brief-div">
+          <h3 class="sec-head">2. Provide your brief</h3>
+          <label for="p-b" class="p-b-label">
+            <input type="file" name="p-b" id="p-b" hidden (change)="filechange($event)">
+            <h6 class="p-b-l-head">
+              Upload your latest resume
+            </h6>
+            <div class="ch-file-btn">
+              Choose file
+            </div>
+            <p class="p-b-cap">
+              Recommended. Best format is a word document, but we support most files.
+            </p>
+          </label>
+
+          <p class="n-t-seller">
+            Note to {{name}}
+          </p>
+          <textarea [(ngModel)]="order_description" id="p-b-txt-area" placeholder="You can enter any info needed to complete your order or write a note to {{name}}"></textarea>
+      </div>
+      <div class="payment-div">
+          <h3 class="sec-head">3. Payment Details</h3>
+          <h6 class="pay-dets-cap">
+            Your payment will be held securely by Marketplace until your job is successfully completed.
+          </h6>
+          <div class="payment-core-div">
+          
+
+          </div>
+          <div id="order-err"></div>
+          <button class="submit-order-btn" (click)="placeOrder()">
+            Submit Order
+          </button>
+          <div class="cc-div">
+            <ul>
+              <li>
+                <i class="fab fa-cc-paypal"></i>
+              </li>
+              <li>
+                <i class="fab fa-cc-visa"></i>
+              </li>
+              <li>
+                <i class="fab fa-cc-mastercard"></i>
+              </li>
+              <li>
+                <i class="fab fa-cc-amex"></i>
+              </li>
+            </ul>
+          </div>
+          <p class="terms-p">
+            By clicking this button you confirm that you agree to cvhatch's <a href="#">Terms & Conditions</a> and <a href="#">Services Agreement</a>.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,224 @@
+  <app-sub-header></app-sub-header>
+
+  <div class="main-container">
+    <div class="width-control">
+      <h2 class="u-sub-heads">MY ORDERS</h2>
+      <div class="m-core">
+        <div class="m-left">
+          <div class="m-left-core">
+            <div class="m-l-index">
+              <div class="m-l-index-title">
+                <h3>Orders</h3>
+              </div>
+              <div class="m-l-btn selected-index" (click)="get_orders('all')">
+                All
+              </div>
+              <div class="m-l-btn" (click)="get_orders('cancelled')">
+                Open
+              </div>
+              <div class="m-l-btn" (click)="get_orders('inprogress')">
+                Started
+              </div>
+              <div class="m-l-btn" (click)="get_orders('completed')">
+                Delivered
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-right">
+          <div class="m-r-top-div">
+
+            <div class="m-r-t-div">
+              <div class="m-r-t-top">
+                <i class="fas fa-gift"></i>
+              </div>
+              <div class="m-r-t-btm">
+                <div class="m-r-t-b-left">
+                  <h5>
+                    {{total_orders}}
+                  </h5>
+                </div>
+                <div class="m-r-t-b-right">
+                  <h5 class="m-r-t-b-t">
+                    Products Sold
+                  </h5>
+                  <h5 class="m-r-t-b-c">
+                    In all Time
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="m-r-t-div">
+              <div class="m-r-t-top">
+                <i class="fas fa-gift"></i>
+              </div>
+              <div class="m-r-t-btm">
+                <div class="m-r-t-b-left">
+                  <h5>
+                    {{this_month_orders_len}}
+                  </h5>
+                </div>
+                <div class="m-r-t-b-right">
+                  <h5 class="m-r-t-b-t">
+                    Products Sold
+                  </h5>
+                  <h5 class="m-r-t-b-c">
+                    In this Month
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="m-r-t-div">
+              <div class="m-r-t-top">
+                <i class="fas fa-tag"></i>
+              </div>
+              <div class="m-r-t-btm">
+                <div class="m-r-t-b-left">
+                  <h5>
+                    ${{f_t_sales}}
+                  </h5>
+                </div>
+                <div class="m-r-t-b-right">
+                  <h5 class="m-r-t-b-t">
+                    Total Sales
+                  </h5>
+                  <h5 class="m-r-t-b-c">
+                    In all Time
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="m-r-t-div">
+              <div class="m-r-t-top">
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+              <div class="m-r-t-btm">
+                <div class="m-r-t-b-left">
+                  <h5>
+                    ${{f_t_earnings}}
+                  </h5>
+                </div>
+                <div class="m-r-t-b-right">
+                  <h5 class="m-r-t-b-t">
+                    Total Earnings
+                  </h5>
+                  <h5 class="m-r-t-b-c">
+                    In all Time
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="m-gigs-div">
+            <span *ngFor="let x of f_all_orders">
+              <div class="m-gig">
+                <div class="m-img">
+                  <img src="{{x.gig_img}}" alt="" width="100%" height="100%" (click)="go_to_orderDet(x.order_id)">
+                  <div class="m-gig-setting">
+                    <div class="m-gig-icon">
+                      <i class="fas fa-cog"></i>
+                      </div>
+                    <div class="m-set-menu">
+                      <div class="m-set-menu-core">
+                        <ul>
+                            <span *ngIf="x.accept == true" class="accept">
+                              <li class="sales-drop-down" (click)="accept_order(x.order_id,$event,x)">Accept</li>
+                            </span>
+                            <span *ngIf="x.accept == false" class="accept">
+                              <li class="sales-drop-back">Accept</li>
+                            </span>
+                            <span *ngIf="x.deliver == true" class="deliver">
+                                <li class="sales-drop-down"(click)="deliver_order(x,$event)">Deliver</li>
+                            </span>
+                            <span *ngIf="x.deliver == false" class="deliver">
+                                <li class="sales-drop-back">Deliver</li>
+                            </span>
+                            <span *ngIf="x.cancel == true" class="cancel">
+                                <li class="sales-drop-down" (click)="cancel_order([x.order_id],$event,x)">Cancel</li>
+                            </span>
+                            <span *ngIf="x.cancel == false" class="cancel">
+                                <li class="sales-drop-back">Cancel</li>
+                            </span>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-title-div" (click)="go_to_orderDet(x.order_id)">
+                  <h3 class="m-title">
+                    {{x.title}}...
+                  </h3>
+                </div>
+                <div class="m-buyer-div" (click)="go_to_orderDet(x.order_id)">
+                  <h6 class="m-buyer-h">
+                    Buyer:
+                    <span class="m-buyer-name">{{x.buyer_name}}</span>
+                  </h6>
+                </div>
+                <div class="m-dets-div" (click)="go_to_orderDet(x.order_id)">
+                  <div class="m-dets">
+                    <span class="m-det-ico">
+                      <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <p>{{x.order_num}}</p>
+                  </div>
+                  <div class="m-dets">
+                    <h5>TOTAL</h5>
+                    <h6>
+                      ${{x.total_amount}}
+                    </h6>
+                  </div>
+                  <div class="m-dets">
+                    <h5>PURCHASE DATE</h5>
+                    <h6>
+                      {{x.order_date}}
+                    </h6>
+                  </div>
+                </div>
+                <!-- Copy paste the other code -->
+                <div class="m-progress-div">
+                  <div class="stat-div-core">
+                    <div class="stat-div">
+                      <div class="stat-out stat-one">
+                        <div class="stat-in" [style.width]="x.div_one">
+
+                        </div>
+                      </div>
+                      <div class="stat-name">
+                        STARTED
+                      </div>
+                    </div>
+
+                    <div class="stat-div">
+                      <div class="stat-out stat-two">
+                        <div class="stat-in" [style.width]="x.div_two">
+                        </div>
+                      </div>
+                      <div class="stat-name">
+                        ACCEPTED
+                      </div>
+                    </div>
+
+                    <div class="stat-div">
+                      <div class="stat-out stat-three">
+                        <div class="stat-in" [style.width]="x.div_three">
+
+                        </div>
+                      </div>
+                      <div class="stat-name">
+                        DELIVERED
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

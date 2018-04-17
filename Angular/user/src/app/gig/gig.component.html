@@ -1,0 +1,1341 @@
+<app-sub-header></app-sub-header>
+<div class="main-contianer">
+  <div class="fvp">
+    <div class="width-control">
+
+      <div class="gig-main-left-div">
+        <div class="gig-main-left-core">
+          <h2 class="gig-main-title">
+            {{pac_title}}
+          </h2>
+          <div class="gig-main-tags-div">
+            <span class="best-tag">
+              BEST SELLER
+            </span>
+            by
+            <h6 class="gig-main-author-name" (click)="gotoProfile(seller_id)">{{seller_fname | titlecase}} {{seller_lname | titlecase}}.</h6>
+          </div>
+          <div class="gig-main-acts-div">
+            <div class="gig-main-act">
+              <span class="gig-main-ico">
+                <i class="fas fa-map-marker"></i>
+              </span>
+              <h6 class="gig-main-act-name">{{country | titlecase}}</h6>
+            </div>
+            <div class="gig-main-act">
+              <span class="gig-main-ico">
+                <i class="fas fa-tag"></i>
+              </span>
+              <h6 class="gig-main-act-name">{{category | titlecase}}</h6>
+            </div>
+            <div class="gig-main-act-actions-div">
+
+              <button class="gig-act-btn" (click)="addtoFav()">
+                <span *ngIf='fav_status == true'>
+                  <img class="add-fav-img" src="../assets/icons/gig-details-screen/001-favorite_2.png">
+                  <span class="add-fav-btn-name">Added to favorites</span>
+                </span>
+                <span *ngIf='fav_status == false'>
+                  <img class="add-fav-img" src="../assets/icons/gig-details-screen/001-favorite_1.png">
+                  <span class="add-fav-btn-name">Favourite</span>
+                </span>
+              </button>
+
+              <!-- <button class="gig-act-btn">
+                <span class="act-btn-ico">
+                  <i class="fab fa-facebook-square"></i>
+                </span>
+                Share
+              </button>
+
+              <button class="gig-act-btn">
+                <span class="act-btn-ico">
+                  <i class="fab fa-twitter"></i>
+                </span>
+                Tweet
+              </button> -->
+
+            </div>
+          </div>
+          <div class="gig-main-img-div">
+            <div id="container-core" class="swiper-core">
+              <div ng2-carouselamos class="slides-wrapper" [items]="items" [width]="1500" [$prev]="prev" [$next]="next" [$item]="item">
+              </div>
+              <ng-template #prev>
+                <img class="gig-carousel" src="../assets/icons/gig-details-screen/001_arrow_1.png" id="left">
+              </ng-template>
+              <ng-template #next>
+                <img class="gig-carousel" src="../assets/icons/gig-details-screen/001_arrow_2.png" id="right">
+              </ng-template>
+              <ng-template #item let-item let-i="index">
+                <div class="items" style="min-width:100%;height:100%">
+                  <img src="{{item.name}}" id="in-img" style="width:650px;height:425px;">
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sta-pre-pro -->
+      <div class="gig-main-right-div" id="side-main">
+        <div class="gig-main-right-core">
+          <div class="main-gig-part">
+            <div class="clock">
+              <div class="clock-icon">
+                <i class="fa fa-clock"></i>
+              </div>
+              <h5 class="main-gig-part-t">{{del_days}} Days Delivery</h5>
+            </div>
+            <div class="clock">
+              <div class="clock-icon">
+                <img src="../assets/icons/mouse-hover-box/001-arrows.png" alt="">
+              </div>
+              <h5 class="main-gig-part-t">{{revisions}} Revisions</h5>
+            </div>
+          </div>
+          <div class="gig-main-rating">
+            <div class="gig-main-r-l">
+              <img src="{{star_one}}" alt="" width="18px" height="18px">
+              <img src="{{star_two}}" alt="" width="18px" height="18px">
+              <img src="{{star_three}}" alt="" width="18px" height="18px">
+              <img src="{{star_four}}" alt="" width="18px" height="18px">
+              <img src="{{star_five}}" alt="" width="18px" height="18px">
+            </div>
+            <div class="gig-main-r-r">
+              {{rat_num}} ratings
+            </div>
+          </div>
+          <div class="gig-main-zoom-div">
+            <div class="gig-main-zoom sta" (click)="selected_package('standard')">
+              <div class="zoom-title">STANDARD</div>
+              <div class="zoom-price">${{pac_cos_sta}}</div>
+            </div>
+            <div class="gig-main-zoom pre" (click)="selected_package('premium')">
+              <div class="zoom-title">PREMIUM</div>
+              <div class="zoom-price">${{pac_cos_pre}}</div>
+            </div>
+            <div class="gig-main-zoom pro" (click)="selected_package('pro')">
+              <div class="zoom-title">PRO</div>
+              <div class="zoom-price">${{pac_cos_pro}}</div>
+            </div>
+          </div>
+          <div class="gig-main-cp">
+            <h5 class="gig-main-cp-t" (click)="compare_packages()">Compare Packages</h5>
+          </div>
+          <button class="buy-now-btn" (click)="order_service()">
+            Order Service
+          </button>
+          <hr class="gr-hr">
+        </div>
+        <div class="baloons">
+          <div class="bal-top">
+            <div class="bal-top-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_1.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Quick and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-top-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/trustworthy_writers.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bal-bot">
+            <div class="bal-bot-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/001-shield_2.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-bot-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_3.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sta-pre -->
+      <div class="gig-main-right-div" id="side-three">
+        <div class="gig-main-right-core">
+          <div class="main-gig-part">
+            <div class="clock">
+              <div class="clock-icon">
+                <img src="../assets/icons/mouse-hover-box/002-clock.png" alt="" height="20px" width="20px">
+              </div>
+              <h5 class="main-gig-part-t">{{del_days}} Days Delivery</h5>
+            </div>
+            <div class="clock">
+              <div class="clock-icon">
+                <img src="../assets/icons/mouse-hover-box/001-arrows.png" alt="" height="20px" width="20px">
+              </div>
+              <h5 class="main-gig-part-t">{{revisions}} Revisions</h5>
+            </div>
+          </div>
+          <div class="gig-main-rating">
+            <div class="gig-main-r-l">
+              <img src="{{star_one}}" alt="" width="18px" height="18px">
+              <img src="{{star_two}}" alt="" width="18px" height="18px">
+              <img src="{{star_three}}" alt="" width="18px" height="18px">
+              <img src="{{star_four}}" alt="" width="18px" height="18px">
+              <img src="{{star_five}}" alt="" width="18px" height="18px">
+            </div>
+            <div class="gig-main-r-r">
+              {{rat_num}} rating(s)
+            </div>
+          </div>
+          <div class="gig-main-zoom-div">
+            <div class="gig-main-zoom sta" (click)="selected_package_sta_pre('standard')">
+              <div class="zoom-title">STANDARD</div>
+              <div class="zoom-price">${{pac_cos_sta}}</div>
+            </div>
+            <div class="gig-main-zoom pre" (click)="selected_package_sta_pre('premium')">
+              <div class="zoom-title">PREMIUM</div>
+              <div class="zoom-price">${{pac_cos_pre}}</div>
+            </div>
+            <!-- <div class="gig-main-zoom">
+                <div class="zoom-title">PRO</div>
+                <div class="zoom-price">${{pac_cos_pro}}</div>
+            </div> -->
+          </div>
+          <div class="gig-main-cp">
+            <h5 class="gig-main-cp-t" (click)="compare_packages()">Compare Packages</h5>
+          </div>
+          <button class="buy-now-btn" (click)="order_service()">
+            Buy Now
+          </button>
+          <hr class="gr-hr">
+        </div>
+        <div class="baloons">
+          <div class="bal-top">
+            <div class="bal-top-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_1.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-top-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/trustworthy_writers.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bal-bot">
+            <div class="bal-bot-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/001-shield_2.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-bot-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_3.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sta-pro -->
+      <div class="gig-main-right-div" id="side-two">
+        <div class="gig-main-right-core">
+          <div class="main-gig-part">
+            <div class="clock">
+              <div class="clock-icon">
+                <i class="fa fa-clock"></i>
+              </div>
+              <h5 class="main-gig-part-t">{{del_days}} Days Delivery</h5>
+            </div>
+            <div class="clock">
+              <div class="clock-icon">
+                <i class="fa fa-clock"></i>
+              </div>
+              <h5 class="main-gig-part-t">{{revisions}} Revisions</h5>
+            </div>
+          </div>
+          <div class="gig-main-rating">
+            <div class="gig-main-r-l">
+              <img src="{{star_one}}" alt="" width="18px" height="18px">
+              <img src="{{star_two}}" alt="" width="18px" height="18px">
+              <img src="{{star_three}}" alt="" width="18px" height="18px">
+              <img src="{{star_four}}" alt="" width="18px" height="18px">
+              <img src="{{star_five}}" alt="" width="18px" height="18px">
+            </div>
+            <div class="gig-main-r-r">
+              {{rat_num}} ratings
+            </div>
+          </div>
+          <div class="gig-main-zoom-div">
+            <div class="gig-main-zoom sta" (click)="selected_package_sta_pro('standard')">
+              <div class="zoom-title">STANDARD</div>
+              <div class="zoom-price">${{pac_cos_sta}}</div>
+            </div>
+            <!-- <div class="gig-main-zoom zoom-selected">
+                <div class="zoom-title">PREMIUM</div>
+                <div class="zoom-price">${{pac_cos_pre}}</div>
+            </div> -->
+            <div class="gig-main-zoom pro" (click)="selected_package_sta_pro('pro')">
+              <div class="zoom-title">PRO</div>
+              <div class="zoom-price">${{pac_cos_pro}}</div>
+            </div>
+          </div>
+          <div class="gig-main-cp">
+            <h5 class="gig-main-cp-t" (click)="compare_packages()">Compare Packages</h5>
+          </div>
+          <button class="buy-now-btn" (click)="order_service()">
+            Buy Now
+          </button>
+          <hr class="gr-hr">
+        </div>
+        <div class="baloons">
+          <div class="bal-top">
+            <div class="bal-top-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_1.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-top-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/trustworthy_writers.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bal-bot">
+            <div class="bal-bot-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/001-shield_2.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-bot-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_3.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- only standard -->
+      <div class="gig-main-right-div" id="side-one">
+        <div class="gig-main-right-core">
+          <div class="main-gig-part">
+            <div class="clock">
+              <div class="clock-icon">
+                <i class="fa fa-clock"></i>
+              </div>
+              <h5 class="main-gig-part-t">{{del_days}} Days Delivery</h5>
+            </div>
+            <div class="clock">
+              <div class="clock-icon">
+                <i class="fa fa-clock"></i>
+              </div>
+              <h5 class="main-gig-part-t">{{revisions}} Revisions</h5>
+            </div>
+          </div>
+          <div class="gig-main-rating">
+            <div class="gig-main-r-l">
+              <img src="{{star_one}}" alt="" width="18px" height="18px">
+              <img src="{{star_two}}" alt="" width="18px" height="18px">
+              <img src="{{star_three}}" alt="" width="18px" height="18px">
+              <img src="{{star_four}}" alt="" width="18px" height="18px">
+              <img src="{{star_five}}" alt="" width="18px" height="18px">
+            </div>
+            <div class="gig-main-r-r">
+              {{rat_num}} ratings
+            </div>
+          </div>
+          <div class="gig-main-zoom-div single-pac-sta">
+            ${{pac_cos_sta}}
+          </div>
+          <div class="gig-main-cp">
+            <h5 class="gig-main-cp-t" (click)="compare_packages()">Compare Packages</h5>
+          </div>
+          <button class="buy-now-btn" (click)="order_service()">
+            Buy Now
+          </button>
+          <hr class="gr-hr">
+        </div>
+        <div class="baloons">
+          <div class="bal-top">
+            <div class="bal-top-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_1.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-top-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/trustworthy_writers.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bal-bot">
+            <div class="bal-bot-l">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/001-shield_2.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+            <div class="bal-bot-r">
+              <div class="bal-icon">
+                <img src="../assets/icons/gig-details-screen/Ratebox_3.png" alt="">
+              </div>
+              <div class="b-t-l-p">
+                <p>
+                  Simple and Easy Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="svp">
+    <div class="width-control">
+      <div class="packages-div">
+        <h3 class="sub-head">Compare Packages</h3>
+
+        <!-- Standard and premium -->
+        <table class="packages-table" id="sta-pre">
+          <tr>
+            <th>
+
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  STANDARD
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_sta}}
+                </h6>
+              </div>
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  ADVANCED
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pre}}
+                </h6>
+              </div>
+            </th>
+            <!-- <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  PRO
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pro}}
+                </h6>
+              </div>
+            </th> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Description
+              </h6>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_sta}}
+              </p>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_pre}}
+              </p>
+            </td>
+            <!-- <td>
+              <p class="package-p">
+                Pro package includes HQ File, Video Sync, Background Music, Script Proofreading, Lisense
+              </p>
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Phone Consultation
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="sf_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_sta == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="sf_pre == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_pre == false">
+                -
+              </span>
+            </td>
+            <!-- <td>
+              <span class="package-check-ico">
+                  <i class="fas fa-check"></i>
+              </span>
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Cover Letter
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="hq_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_sta == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="hq_pre == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_pre == false">
+                -
+              </span>
+            </td>
+            <!-- <td>
+              -
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                File Format
+              </h6>
+            </td>
+            <td>
+              {{words_sta}}
+            </td>
+            <td>
+              {{words_pre}}
+            </td>
+            <!-- <td>
+
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Revisions
+              </h6>
+            </td>
+            <td>
+              {{rev_sta}}
+            </td>
+            <td>
+              {{rev_pre}}
+            </td>
+            <!-- <td>
+
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Delivery Time
+              </h6>
+            </td>
+            <td>
+              {{pac_del_sta}}
+            </td>
+            <td>
+              {{pac_del_pre}}
+            </td>
+            <!-- <td>
+
+            </td> -->
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+            </td>
+            <td>
+              <button class="package-select-btn btn-sta-pre" id="standard-select-btn-sta-pre" (click)="selected_package_sta_pre('standard')">
+                Select
+              </button>
+            </td>
+            <td>
+              <button class="package-select-btn btn-sta-pre" id="premium-select-btn-sta-pre" (click)="selected_package_sta_pre('premium')">
+                Select
+              </button>
+            </td>
+            <!-- <td>
+              <button class="package-select-btn">
+                Select
+              </button>
+            </td> -->
+          </tr>
+        </table>
+
+        <!-- Standard and pro -->
+        <table class="packages-table" id="sta-pro">
+          <tr>
+            <th>
+
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  Standard
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_sta}}
+                </h6>
+              </div>
+            </th>
+            <!-- <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                    PREMIUM
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pre}}
+                </h6>
+              </div>
+            </th> -->
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  PREMIUM
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pro}}
+                </h6>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Description
+              </h6>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_sta}}
+              </p>
+            </td>
+            <!-- <td>
+              <p class="package-p">
+                Premium package includes extra Video Sync and Background Music
+              </p>
+            </td> -->
+            <td>
+              <p class="package-p">
+                {{pac_det_pro}}
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Phone Consultation
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="sf_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_sta == false">
+                -
+              </span>
+            </td>
+            <!-- <td>
+              -
+            </td> -->
+            <td>
+              <span *ngIf="sf_pro == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_pro == false">
+                -
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Cover Letter
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="hq_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_sta == false">
+                -
+              </span>
+            </td>
+            <!-- <td>
+              <span class="package-check-ico">
+                  <i class="fas fa-check"></i>
+              </span>
+            </td> -->
+            <td>
+              <span *ngIf="hq_pro == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_pro == false">
+                -
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                File Format
+              </h6>
+            </td>
+            <td>
+              {{words_sta}}
+            </td>
+            <!-- <td>
+
+            </td> -->
+            <td>
+              {{words_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Revisions
+              </h6>
+            </td>
+            <td>
+              {{rev_sta}}
+            </td>
+            <!-- <td>
+                {{rev_pre}}
+            </td> -->
+            <td>
+              {{rev_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Delivery Time
+              </h6>
+            </td>
+            <td>
+              {{pac_del_sta}}
+            </td>
+            <!-- <td>
+
+            </td> -->
+            <td>
+              {{pac_del_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+            </td>
+            <td>
+              <button class="package-select-btn btn-sta-pro" id="standard-select-btn-sta-pro" (click)="selected_package_sta_pro('standard')">
+                Select
+              </button>
+            </td>
+            <!-- <td>
+              <button class="package-select-btn package-selected-btn">
+                Selected <span class="p-select-ico"><i class="fas fa-check"></i></span>
+              </button>
+            </td> -->
+            <td>
+              <button class="package-select-btn btn-sta-pro" id="pro-select-btn-sta-pro" (click)="selected_package_sta_pro('pro')">
+                Select
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Standard , Premium and pro -->
+        <table class="packages-table" id="sta-pre-pro">
+          <tr>
+            <th>
+
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  STANDARD
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_sta}}
+                </h6>
+              </div>
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  ADVANCED
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pre}}
+                </h6>
+              </div>
+            </th>
+            <th>
+              <div class="package-th">
+                <h5 class="package-th-head">
+                  PREMIUM
+                </h5>
+                <h6 class="package-th-price">
+                  ${{pac_cos_pro}}
+                </h6>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Description
+              </h6>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_sta}}
+              </p>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_pre}}
+              </p>
+            </td>
+            <td>
+              <p class="package-p">
+                {{pac_det_pro}}
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Phone Consultation
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="sf_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_sta == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="sf_pre == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_pre == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="sf_pro == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="sf_pro == false">
+                -
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Cover Letter
+              </h6>
+            </td>
+            <td>
+              <span *ngIf="hq_sta == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_sta == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="hq_pre == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_pre == false">
+                -
+              </span>
+            </td>
+            <td>
+              <span *ngIf="hq_pro == true">
+                <img src="../assets/icons/gig_details_table_tick.png" width="12px" height="12px">
+              </span>
+              <span *ngIf="hq_pro == false">
+                -
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                File Format
+              </h6>
+            </td>
+            <td>
+              {{words_sta}}
+            </td>
+            <td>
+              {{words_pre}}
+            </td>
+            <td>
+              {{words_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Revisions
+              </h6>
+            </td>
+            <td>
+              {{rev_sta}}
+            </td>
+            <td>
+              {{rev_pre}}
+            </td>
+            <td>
+              {{rev_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+              <h6 class="package-side-head">
+                Delivery Time
+              </h6>
+            </td>
+            <td>
+              {{pac_del_sta}}
+            </td>
+            <td>
+              {{pac_del_pre}}
+            </td>
+            <td>
+              {{pac_del_pro}}
+            </td>
+          </tr>
+          <tr>
+            <td class="package-side-heads-div">
+            </td>
+            <td>
+              <button class="package-select-btn" id="standard-select-btn" (click)="selected_package('standard')">
+                Select
+              </button>
+            </td>
+            <td>
+              <button class="package-select-btn" id="premium-select-btn" (click)="selected_package('premium')">
+                Select
+              </button>
+            </td>
+            <td>
+              <button class="package-select-btn" id="pro-select-btn" (click)="selected_package('pro')">
+                Select
+              </button>
+            </td>
+          </tr>
+        </table>
+        <!-- single pack -->
+        <div class="single-pack">
+          <div class="single-pack-div">
+            <div class="single-pack-title">
+              <h2 class="title">Order details</h2>
+            </div>
+            <div class="single-pack-days">
+              <div class="single-left">
+                <div class="single-day-rev">
+                  <div class="left-top-single">
+                    <div class="del-days">
+                      <img class="gig-rate-img" src="../assets/icons/mouse-hover-box/002-clock.png">{{pac_del_sta}} Days Delivery
+                    </div>
+                    <div class="rev-single">
+                      <img class="gig-rate-img" src="../assets/icons/mouse-hover-box/001-arrows.png">{{rev_sta}} Revisions
+                    </div>
+                  </div>
+                  <div class="gold">
+                    <h3>STANDARD</h3>
+                    <p>{{pac_det_sta}}</p>
+                  </div>
+                  <div class="bottom-tick">
+                    <ul>
+                      <li>
+                        File Format : {{words_sta}}
+                      </li>
+                      <li>
+                        <span *ngIf="hq_sta == true">
+                          <i class="det-i" class="fa fa-check"></i>&nbsp;&nbsp;Cover Letter
+                        </span>
+                        <span *ngIf="hq_sta == false">
+                          <i class="det-i" class="fa fa-times"></i>&nbsp;&nbsp;Cover Letter
+                        </span>
+                      </li>
+                      <li>
+                        <span *ngIf="sf_sta == true">
+                          <i class="det-i" class="fa fa-check"></i>&nbsp;&nbsp;Phone Consultation
+                        </span>
+                        <span *ngIf="sf_sta == false">
+                          <i class="det-i" class="fa fa-times"></i>&nbsp;&nbsp;Phone Consultation
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-check"></i>&nbsp;&nbsp; Review & criteria
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+              <div class="single-right">
+                <h1>${{pac_cos_sta}}</h1>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="extras-div">
+          <h3 class="sub-head">Any Extras ?</h3>
+
+          <div class="extras-core">
+            <div *ngFor="let extras of ext ; let i = index">
+              <div class="extra">
+                <div class="extras-check-div">
+                  <input type='checkbox' name='thing' value='valuable' id="ext-check{{i}}" (click)="addToCheckout(extras._id,$event)" />
+                </div>
+                <span *ngIf="extras.ribbon === true">
+                  <div class="extras-badge-div">
+                    <span class="extras-badge">
+                      <span class="extras-badge-p">Fast Delivery</span>
+                    </span>
+                  </div>
+                </span>
+                <div class="extras-desc-div">
+                  <h6 class="extras-extra-desc">
+                    {{extras.e_description}}
+                  </h6>
+                  <h6 class="extras-desc-days">
+                    Additional 1 working day
+                  </h6>
+                </div>
+                <div class="extras-cost-div">
+                  +${{extras.price}}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="about-div">
+          <h3 class="sub-head">Service Description</h3>
+          <div class="about-gig-p-div">
+            <p class="about-gig-p">
+              {{description}}
+            </p>
+          </div>
+        </div>
+        <div class="author-needs-div">
+          <h3 class="sub-head">What the writer needs to start the work</h3>
+          <ol class="author-needs-ol">
+            <li>
+              {{author_work}}
+            </li>
+
+          </ol>
+        </div>
+        <span *ngIf="dis_faq">
+          <div class="faq-div">
+            <h3 class="sub-head">Frequently Asked Questions</h3>
+
+            <div class="faq-core">
+              <span *ngFor="let f of faq ; let i = index">
+                <button class="accordion" id="que{{i}}">{{f.question}}?</button>
+                <div class="panel" id="ans{{i}}">
+                  <p>{{f.answer}}.</p>
+                </div>
+              </span>
+            </div>
+          </div>
+        </span>
+        <div class="meet-team-div">
+          <h3 class="sub-head">MEET THE TEAM</h3>
+          <div class="meet-team-core">
+            <div class="team-pic-core">
+              <div class="team-pic-out">
+                <span class="verified-tag">
+                  <span class="verified-tag-ico">
+                    <img src="../assets/icons/gig-details-screen/001-shield_2.png" alt="">
+                  </span>
+                  Verified
+                </span>
+                <div class="team-pic">
+                  <img src="{{pro_pic}}" alt="">
+                </div>
+              </div>
+              <h6 class="team-pic-name" (click)="gotoProfile(seller_id)">
+                {{seller_fname | titlecase}} &nbsp;{{seller_lname | titlecase}}
+              </h6>
+              <p class="team-pic-dets">
+                {{country}} &nbsp; Joind in Aug 2015
+              </p>
+            </div>
+            <h6 class="need-sup">
+              Need support for this product? Leave a private message for Sara :
+            </h6>
+            <button class="contact-host-btn" (click)="go_to_inbox()">
+              Contact Host
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--reviews  -->
+    <div class="tvp" id="tvp-dup">
+      <div class="reviews-div">
+        <div class="width-control">
+          <div class="rev-left">
+            <h2 class="u-sub-heads">REVIEWS</h2>
+          </div>
+          <div class="rev-right">
+
+            <div class="rev-top">
+              <div class="rt-left">
+                <h6>Average Rating</h6>
+                <span class="avg-rat-num">
+                  {{f_avg_rating}}
+                </span>
+                <div class="rev-stars">
+                  <img src="{{star_one}}" alt="" width="20px" height="20px">
+                  <img src="{{star_two}}" alt="" width="20px" height="20px">
+                  <img src="{{star_three}}" alt="" width="20px" height="20px">
+                  <img src="{{star_four}}" alt="" width="20px" height="20px">
+                  <img src="{{star_five}}" alt="" width="20px" height="20px">
+                </div>
+              </div>
+              <div class="rt-right">
+                <h6>Details</h6>
+
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    5 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="five_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    4 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="four_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    3 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="three_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    2 stars
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="two_rat"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rev-bar-div">
+                  <span class="rev-name">
+                    1 star
+                  </span>
+                  <div class="rev-bar">
+                    <div class="rev-parent">
+                      <div class="rev-child" [style.width]="one_rat"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div *ngFor="let rev of reviews">
+              <div class="review">
+                <div class="rew-top-div">
+                  <div class="rew-img">
+                    <img src="{{rev.pro_pic}}" alt="">
+                  </div>
+                  <div class="rew-dets">
+                    <div class="rw-name">
+                      {{rev.name}}
+                    </div>
+                    <div class="rw-time">
+                      Posted {{rev.date}}
+                    </div>
+                  </div>
+                </div>
+                <div class="rew-stars-div">
+                  <img src="{{rev.raty[0]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[1]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[2]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[3]}}" alt="" width="16px" height="16px">
+                  <img src="{{rev.raty[4]}}" alt="" width="16px" height="16px">
+                </div>
+                <div class="rew-review">
+                  <p>
+                    {{rev.review}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="review">
+              <div class="rew-top-div">
+                <div class="rew-img">
+                  <img src="../../assets/img/leo.jpg" alt="">
+                </div>
+                <div class="rew-dets">
+                  <div class="rw-name">
+                    First Name
+                  </div>
+                  <div class="rw-time">
+                    Posted 2 months ago
+                  </div>
+                </div>
+              </div>
+              <div class="rew-stars-div">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+              </div>
+              <div class="rew-review">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis deserunt quos ea fuga odit aliquam necessitatibus ducimus quae eveniet ex, placeat molestiae corrupti asperiores ipsum praesentium eligendi provident nihil. Nam.
+                </p>
+              </div>
+            </div>
+            <div class="review">
+              <div class="rew-top-div">
+                <div class="rew-img">
+                  <img src="../../assets/img/leo.jpg" alt="">
+                </div>
+                <div class="rew-dets">
+                  <div class="rw-name">
+                    First Name
+                  </div>
+                  <div class="rw-time">
+                    Posted 2 months ago
+                  </div>
+                </div>
+              </div>
+              <div class="rew-stars-div">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-on.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+                  <img src="../assets/star-off.png" alt="" width="18px" height="18px">
+              </div>
+              <div class="rew-review">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis deserunt quos ea fuga odit aliquam necessitatibus ducimus quae eveniet ex, placeat molestiae corrupti asperiores ipsum praesentium eligendi provident nihil. Nam.
+                </p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

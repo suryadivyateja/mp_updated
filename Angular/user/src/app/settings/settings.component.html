@@ -1,0 +1,91 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <div class="set-core">
+      <div class="set-left">
+        <div class="set-index-div">
+          <div class="set-index-top">
+            <div class="set-i-top-ico">
+                <img src={{profile_pic}} class="img-fluid" style="border-radius:35px;width:65px;height:65px">
+            </div>
+            <h4 class="set-i-name">
+                {{name}}
+            </h4>
+            <h5 class="set-i-des">
+                {{designation}}
+            </h5>
+            <h6 class="set-i-email">
+                {{email}}
+            </h6>
+          </div>
+          <div class="set-index-index">
+            
+            <div class="index" routerLink='profile'>
+              <div class="in-left">
+                <span class="in-left-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                  About Me
+              </div>
+              <div class="in-right-ico">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            
+            <div class="index" routerLink='password'>
+              <div class="in-left">
+                <span class="in-left-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                  Password
+              </div>
+              <div class="in-right-ico">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            
+            <div class="index" routerLink='payments'>
+              <div class="in-left">
+                <span class="in-left-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                  Payments
+              </div>
+              <div class="in-right-ico">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            
+            <div class="index" routerLink='email-notifications'>
+              <div class="in-left">
+                <span class="in-left-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                  Email Notifications
+              </div>
+              <div class="in-right-ico">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            
+            <div class="index" routerLink='id-verification'>
+              <div class="in-left">
+                <span class="in-left-ico">
+                  <i class="fas fa-user"></i>
+                </span>
+                  ID Verification
+              </div>
+              <div class="in-right-ico">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="set-right">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

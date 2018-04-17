@@ -1,0 +1,124 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="u-sub-heads">My Feedback</h2>
+
+    <div class="fed-core">
+      <p class="strong">
+        We'd love to hear from you about the products you've purchased.
+      </p>
+      <p>
+        Click a start to give the product a rating and write a little something to let us know why you gave it that score.
+      </p>
+      <p class="note-p">
+        NOTE: This is for product feedback only. If you need to get in touch with us regarding an order, please use our Live Chat
+        or click the help cener link in the footer.
+      </p>
+
+      <div class="feeds-div">
+        <div *ngFor="let x of feedbacks">
+          <div class="feed"  (click)="edit_feedback(x)">
+            <div class="feed-left">
+              <div class="feed-l-img">
+                <img src="{{x.gig_img}}" alt="">
+              </div>
+            </div>
+            <div class="feed-right">
+              <div class="feed-r-core">
+                <h3 class="feed-r-title">
+                  {{x.gig_title | titlecase}}
+                </h3>
+                <p>
+                  <strong>Seller :</strong>{{x.seller_name | titlecase}}</p>
+                <h5 class="feed-r-date">
+                  Purchased : {{x.date}}
+                </h5>
+                <span class="rating-div">
+                  <img src="{{x.raty1}}" alt="" width="18px" height="18px">
+                  <img src="{{x.raty2}}" alt="" width="18px" height="18px">
+                  <img src="{{x.raty3}}" alt="" width="18px" height="18px">
+                  <img src="{{x.raty4}}" alt="" width="18px" height="18px">
+                  <img src="{{x.raty5}}" alt="" width="18px" height="18px">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- pop up in feedback -->
+<div class="feedback-background mainone">
+  <div class="container feed-pop oneone" style="display:none">
+    <div class="row feedback-row">
+      <div class="col-lg-6 col-md-6 col-xs-6">
+        <h3>My Feedback</h3>
+      </div>
+      <div class="col-lg-6 col-md-6 col-xs-6">
+        <span (click)="submit('close')">
+          <i id="feedback-icon" class="fa fa-times"></i>
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="feed-width">
+      <div class="row feedback-img-height">
+        <div class="feed-pop-display">
+          <div class="feed-img-pop">
+            <img src="{{gig_img}}" alt="" width="100%" height="100%">
+          </div>
+          <div class="feed-pop-p">
+            <p class="feed-pop-title">{{gig_title}}</p>
+            <div id="raty"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row pop">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+          <textarea style="padding:10px" class="text-area" placeholder="" [(ngModel)]="review"></textarea>
+          <br>
+          <br>
+          <button class="btn btn-success btn-md" (click)="submit('update')">SUBMIT FEEDBACK</button>
+          <br>
+          <br>
+        </div>
+        <span id="rev-err"></span>
+        <br>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- pop up in feedback after submitting-->
+  <div class="container feed-pop twotwo" style="display:none">
+    <div class="row feedback-row">
+      <div class="col-lg-6 col-md-6 col-xs-6">
+        <h3>Your review has been submitted!</h3>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-xs-6">
+        <span (click)="submit('close-two')">
+          <i id="feedback-icon" class="fa fa-times"></i>
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <div class="continue">
+          <p>Thank you! Your review is currently waiting to be approved. Once that finished you will be able to see here!</p>
+          <p>In the mean time checkout some of today's great deals!</p>
+          <br>
+          <button class="btn btn-success done-btn" (click)="submit('close-two')">DONE</button>
+          <button class="btn btn-success edit-rev-btn" (click)="submit('edit')">Edit Review</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+  </div>
+</div>

@@ -1,0 +1,168 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="u-sub-heads">
+      Messages
+    </h2>
+    <div class="inbox-core">
+      <div class="in-left">
+        <div class="in-left-top">
+
+          <div class="in-l-t-div">
+            <span class="i-l-t-ico">
+              <i class="fas fa-inbox"></i>
+            </span>
+            Inbox
+          </div>
+
+          <div class="in-l-t-div">
+            <span class="i-l-t-ico">
+              <i class="fas fa-star"></i>
+            </span>
+            Starred
+          </div>
+
+          <div class="in-l-t-div">
+            <span class="i-l-t-ico">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+            Archived
+          </div>
+
+        </div>
+        <div class="in-left-search-div">
+          <input type="text" class="in-search-input" placeholder="Search messages">
+        </div>
+        <div class="in-left-contacts-div">
+          <!-- For selected conversation | on the top of all conversations -->
+          <div *ngFor="let side of side_conv;let i = index">
+            <div *ngIf="side.selected === true">
+                <div class="in-l-contact" (click)="switch_conv(side.conv_id,i)">
+                    <div class="in-l-con-left">
+                      <div class="i-l-c-l-left">
+                        <div class="i-l-c-img-core">
+                          <img src="{{side.sender_pic}}">
+                        </div>
+                      </div>
+                      <div class="i-l-c-l-right">
+                        <h3 class="i-l-c-name">
+                            {{side.sender_name | titlecase}}
+                        </h3>
+                        <h6 class="i-l-c-msg"  [innerHTML]="side.last_msg">
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="in-l-con-right">
+                      <span class="i-l-c-date">
+                          {{side.time}}
+                      </span>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <!-- Rest of all conversation here -->
+          <div *ngFor="let side of side_conv;let i = index">
+
+              <div *ngIf="side.selected === false">
+
+                  <div class="in-l-contact" (click)="switch_conv(side.conv_id,i)">
+
+                      <div class="in-l-con-left">
+
+                        <div class="i-l-c-l-left">
+
+                          <div class="i-l-c-img-core">
+
+                            <img src="{{side.sender_pic}}">
+
+                          </div>
+
+                        </div>
+                        <div class="i-l-c-l-right">
+                          <h3 class="i-l-c-name">
+                              {{side.sender_name | titlecase}}
+                          </h3>
+                          <h6 class="i-l-c-msg"  [innerHTML]="side.last_msg">
+                          </h6>
+                        </div>
+                      </div>
+                      <div class="in-l-con-right">
+                        <span class="i-l-c-date">
+                            {{side.time}}
+                        </span>
+                      </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="in-right">
+        <div class="in-right-top">
+         Jonathan Doe
+        </div>
+        <div class="in-right-core">
+        <div class="in-right-msgs-div" #scrollMe>
+
+          <div *ngFor='let msg of display_msgs'>
+            <div *ngIf='msg.status === false'>
+              <div class="message">
+                  <div class="m-img">
+                    <img src="{{msg.pic}}" alt="">
+                  </div>
+                  <div class="m-msg">
+                    <div class="m-msg-top">
+                      <p class="m-msg-p">
+                          {{ msg.message }}
+                      </p>
+                    </div>
+                    <div class="m-msg-btm">
+                      <h6 class="m-msg-time">
+                        {{msg.display_time}}
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div *ngIf='msg.status === true'>
+              <div class="message-m">
+                <div class="m-msg">
+                  <div class="m-msg-top">
+                    <p class="m-msg-p">
+                        {{ msg.message }}
+                    </p>
+                  </div>
+                  <div class="m-msg-btm">
+                    <h6 class="m-msg-time">
+                        {{msg.display_time}}
+                    </h6>
+                  </div>
+                </div>
+                <div class="m-img-m">
+                  <img src="{{msg.pic}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+         
+        <div class="in-right-send-box">
+          <div class="i-r-s-box-core">
+            <textarea id="in-right-txt-area" placeholder="Enter your message..." (keydown.enter)="send_msg_enter($event)" [(ngModel)]="msg"></textarea>
+            <div class="in-right-btm-btns">
+              <div class="attach-btn-div">
+                <i class="fas fa-paperclip"></i>
+              </div>
+              <div class="send-btn-div">
+                <button class="send-btn" (click)="send_msg()">
+                  Send Message
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

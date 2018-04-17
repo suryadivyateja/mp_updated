@@ -1,0 +1,175 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <div class="dash-core">
+      <div class="dash-left">
+        <div class="dash-left-core">
+          <div class="d-l-img-div">
+            <div class="d-l-img-core">
+                <img src={{profile_pic}} id="user-img">
+            </div>
+            <h4 class="d-l-img-name">
+                {{name}}
+            </h4>
+            <h6 class="d-l-img-cap">
+                {{designation}}
+            </h6>
+          </div>
+          <div class="d-l-dets-div">
+            <div class="d-l-dets-core">
+              <div class="d-l-det">
+                <div class="d-l-d-left">
+                  <span class="d-l-ico">
+                    <i class="fas fa-user"></i>
+                  </span> &nbsp;
+                  <h5 class="d-l-det-key">
+                    Member since
+                  </h5>
+                </div>
+                <div class="d-l-d-right">
+                  <h5 class="d-l-det-val">
+                      {{member_since}}
+                  </h5>
+                </div>
+              </div>
+              <div class="d-l-det">
+                <div class="d-l-d-left">
+                  <span class="d-l-ico">
+                    <i class="fas fa-globe"></i>
+                  </span> &nbsp;
+                  <h5 class="d-l-det-key">
+                    Languages
+                  </h5>
+                </div>
+                <div class="d-l-d-right">
+                  <ul>
+                    <li>
+                      <h5 class="d-l-det-val">
+                        English
+                      </h5>
+                    </li>
+                    <li>
+                      <h5 class="d-l-det-val">
+                        Hindi
+                      </h5>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-l-det-n">
+                <div class="d-l-d-left">
+                  <span class="d-l-ico">
+                      <i class="fas fa-info-circle"></i>
+                  </span> &nbsp;
+                  <h5 class="d-l-det-key d-l-det-head">
+                    Description
+                  </h5>
+                </div>
+                <div class="d-l-desc">
+                  <p class="d-l-d-p">
+                      {{description}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-right">
+        <div class="dash-right-core">
+          
+          <div class="d-r-top">
+            <h3 class="d-r-title">
+              Welcome to DesignCrowd !
+            </h3>
+            <h5 class="d-r-cap">
+              You are now part of a global community of over 518,387 creatives, we're happy to have you.
+            </h5>
+          </div>
+
+          <div class="d-r-create-new-div" routerLink='/create-gig'>
+            <div class="plus-ico">
+              <i class="fas fa-plus"></i>
+            </div>
+            <h5 class="d-r-c-title">
+              Create a New Project
+            </h5>
+            <h6 class="d-r-c-cap">
+              Millions of talented freelancers are ready to help you do amazing things.
+            </h6>
+          </div>
+
+          <div class="d-r-to-do-div">
+            <div class="d-r-to-do-top">
+              <h6 class="d-r-to-do-title">
+                TO-DOS ({{not_num}})
+              </h6>
+            </div>
+            <div *ngFor="let x of new_not">
+              <div class="d-r-to-do">
+                <div class="d-r-td-ico">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div class="d-r-td-det">
+                  <h6 class="d-r-td-title">
+                      {{x.message}}
+                  </h6>
+                  <h6 class="d-r-td-label">
+                    NEW !
+                  </h6>
+                </div>
+                <div class="d-r-td-btn-div">
+                  <button class="d-r-td-btn" (click)="go_to_order(x)">
+                    Review Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-r-sh-s-div">
+            <h5>Shop Suggestions</h5>
+          </div>
+          <div class="d-r-to-do-div sh-dr-div">
+            <div class="d-r-to-do">
+              <div class="d-r-td-ico">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="d-r-td-det">
+                <h6 class="sh-r-td-title">
+                  How to maximize your potential
+                </h6>
+                <h6 class="sh-r-td-label">
+                  We've put together a guide
+                </h6>
+              </div>
+              <div class="d-r-td-btn-div">
+                <button class="sh-r-r-btn">
+                  Read the guide
+                </button>
+              </div>
+            </div>
+            <div class="d-r-to-do">
+              <div class="d-r-td-ico">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="d-r-td-det">
+                <h6 class="sh-r-td-title">
+                  Customize the URL for your pattern
+                </h6>
+                <h6 class="sh-r-td-label">
+                  Own your brand on and off
+                </h6>
+              </div>
+              <div class="d-r-td-btn-div">
+                <button class="sh-r-r-btn">
+                  Customize my URL
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

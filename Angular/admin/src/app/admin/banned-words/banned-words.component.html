@@ -1,0 +1,44 @@
+<app-header></app-header>
+<br>
+   <div class="main-col">
+      <div class="main-col-inner">
+        <div id="serr"></div>
+        <div class="con-header">
+          <div class="con-h">
+            <h3 class="con-header-title">
+             Bans-Banned Words
+            </h3>
+          </div>
+        </div>
+        <div class="group-content">
+          <div class="edit-heading">
+            <h6>Banned-Words</h6>
+          </div>
+        </div>
+        <div class="grid">
+          <table cellspacing="0">
+            <thead>
+              <tr>
+                <th class="name">id</th>
+                <th class="id">Word</th>
+                <th clas="action">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let w of bwords let i = index">
+              <tr class="s">
+                <td>
+                  {{i+1}}
+                </td>
+                <td>
+              {{w}}
+                </td>
+                <td><a (click)="delete_this(w)"> <b id="del">Delete</b> </a></td>
+
+              </tr>
+            </tbody>
+  
+          </table>
+        </div>
+  
+      </div>
+    </div>

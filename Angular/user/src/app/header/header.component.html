@@ -1,0 +1,526 @@
+<div class="db">
+  <div class="db-header">
+    <h2 class="db-title">
+      Coursera
+    </h2>
+  </div>
+  <div class="login-div">
+    <div class="login-back">
+      <!-- Sign up -->
+      <div class="login-left-div" id="sign-up-left">
+        <div class="login-icon-div">
+          <i class="fas fa-sign-in-alt"></i>
+        </div>
+        <h3 class="login-title">
+          CREATE YOUR OWN ACCOUNT
+        </h3>
+
+        <div class="login-form-div" (keyup.enter)="app.activate_signup($event)">
+          <input type="text" class="login-inputs" placeholder="First Name" [(ngModel)]="regName" (keyup)="remove_errors()">
+          <input type="text" class="login-inputs" placeholder="Last Name" [(ngModel)]="regLastName" (keyup)="remove_errors()">
+          <input type="text" class="login-inputs" placeholder="Email" [(ngModel)]="regEmail" (keyup)="remove_errors()">
+          <input type="password" class="login-inputs" placeholder="Password" [(ngModel)]="regPassword" (keyup)="remove_errors()">
+          <div class="err">
+            <p id="signup-err"></p>
+          </div>
+          <button class="login-btn" (click)="SignUp()">
+            SIGNUP
+          </button>
+        </div>
+        <div class="or-div">
+          OR
+        </div>
+        <div class="other-sign-in-div">
+          <div class="left-s-txt">
+            Sign in with
+          </div>
+          <div class="right-s-icons">
+            <span class="log-ico">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+            <span class="log-ico">
+              <i class="fab fa-linkedin-in"></i>
+            </span>
+          </div>
+        </div>
+        <p class="signup-btm-p">
+          By signing up you agree to our
+          <span class="sb-terms">privacy policy</span> and
+          <span class="sb-terms">terms of use</span>.
+        </p>
+
+      </div>
+      <!-- Login -->
+      <div class="login-left-div" id="login-left">
+        <div class="login-icon-div">
+          <i class="fas fa-sign-in-alt"></i>
+        </div>
+        <h3 class="login-title">
+          LOGIN TO RESTORED
+        </h3>
+
+        <div class="login-form-div" (keyup.enter)="activate_enter($event)">
+          <input type="text" class="login-inputs" placeholder="Email" [(ngModel)]="loginEmail" (keyup)="remove_errors()">
+          <input type="password" class="login-inputs" placeholder="Password" [(ngModel)]="loginPassword" (keyup)="remove_errors()">
+          <span class="forgot-span" (click)="forgotPassword()">
+            Forgot ?
+          </span>
+          <div class="err">
+            <p id="login-err"></p>
+          </div>
+          <button class="login-btn" (click)="LoginSubmit()">
+            LOGIN
+          </button>
+        </div>
+        <div class="or-div">
+          OR
+        </div>
+        <div class="other-sign-in-div">
+          <div class="left-s-txt">
+            Sign in with
+          </div>
+          <div class="right-s-icons">
+            <span class="log-ico">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+            <span class="log-ico">
+              <i class="fab fa-linkedin-in"></i>
+            </span>
+          </div>
+        </div>
+        <hr class="log-hr">
+        <p class="log-btm-p">
+          Not a member yet ?
+          <span class="join-now-txt" (click)="registerTriggerClicked()">
+            Join now
+          </span>
+        </p>
+
+      </div>
+      <!-- forgot password -->
+      <div class="login-left-div" id="forgot-password">
+        <div class="forgot-top">
+          <div class="login-icon-div">
+            <i class="fas fa-sign-in-alt"></i>
+          </div>
+          <h3 class="login-title forgot-title">
+            FORGOT PASSWORD
+          </h3>
+          <p>
+            Enter your email address below and we will send you the instructions how to generate your new password
+          </p>
+        </div>
+        <div class="forgot-login-div">
+          <input type="text" class="forgot-input" placeholder="yourname@company.com">
+          <button class="forgot-btn">FORGOT PASSWORD</button>
+          <p (click)="signInTriggerClicked()">Back to Login</p>
+        </div>
+        <div class="success-reset">
+          <p>Reset request sent. Please check your inbox for verification email from Razorpay</p>
+          <div class="cross-one">
+            <i class="fas fa-times cc"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-right-div">
+        <h1>Why you choose CVhatch ?</h1>
+        <div class="log-r-c">
+          <div class="l-r-c-img">
+            <img src="../../assets/images/dbfour.jpg" alt="">
+          </div>
+          <div class="l-r-c-t">
+            <h6>Lorem ipsum dolor sit amet.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ad.</p>
+          </div>
+        </div>
+        <div class="log-r-c">
+          <div class="l-r-c-img">
+            <img src="../../assets/images/dbfour.jpg" alt="">
+          </div>
+          <div class="l-r-c-t">
+            <h6>Lorem ipsum dolor sit amet.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ad.</p>
+          </div>
+        </div>
+        <div class="log-r-c">
+          <div class="l-r-c-img">
+            <img src="../../assets/images/dbfour.jpg" alt="">
+          </div>
+          <div class="l-r-c-t">
+            <h6>Lorem ipsum dolor sit amet.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ad.</p>
+          </div>
+        </div>
+        <div class="support">
+          <div class="phone">
+              <i class="fas fa-phone"></i>
+          </div>
+          <div class="p-num">
+            <p class="sup"> CALL FOR SUPPORT</p>
+            <p class="num">1800 123 1234</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="main-header" *ngIf="authService.loggedIn() == false">
+  <div class="width-control">
+    <div class="header-core">
+      <div class="left-section">
+        <h1 id="logo" routerLink="/home">Market Place</h1>
+        <ul>
+          <li>
+            <div class="cat-btn header-btns">
+              CATEGORIES
+              <span class="caret">
+                <i class="fas fa-caret-down"></i>
+              </span>
+
+              <div class="cat-drop-down">
+                <div class="cat-drop-core">
+                  <div class="cats-left">
+                    <ul class="cat-ul">
+                      <li>
+                        Resume Services
+                        <div class="sub-cat-div"></div>
+                      </li>
+                      <li>
+                        Cover Letter Writing
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        LinkedIn Makeover
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Follow up Letters
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Thank you Letters
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Selection Criteria
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Personal Websites
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Infographic Resumes
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Intreview Coaching
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Fresher's/Graduates
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Entrepreneurs
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        Government &amp; Defence
+                        <div class="sub-cat-div"> </div>
+                      </li>
+                      <li>
+                        CEO &amp; Executives
+                        <div class="sub-cat-div"></div>
+                      </li>
+                      <li>
+                        Reference Letter
+                        <div class="sub-cat-div"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="header-btns">
+              HOW IT WORKS
+            </div>
+          </li>
+          <li>
+            <div class="header-btns">
+              BECOME AN AUTHOR
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="right-section">
+        <ul class="r-ul">
+          <li>
+            <button class="reg-btn header-btns" (click)='registerTriggerClicked()'>
+              REGISTER
+            </button>
+          </li>
+          <li>
+            <button class="sign-in-btn header-btns" (click)='signInTriggerClicked()'>
+              SIGN IN
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="main-header logged-header" *ngIf="authService.loggedIn() == true">
+  <div class="width-control">
+    <div class="header-core">
+      <div class="left-section">
+        <h1 id="logo" routerLink="/home">Market Place</h1>
+      </div>
+      <div class="right-section">
+        <ul class="r-ul">
+          <li class="pj-li" routerLink="/create-gig">
+            Post a Job &nbsp;
+            <span class="post-job-btn">
+              <i class="fas fa-plus-circle"></i>
+            </span>
+          </li>
+          <li>
+            <div class="msg-btn ic-btns">
+              <i class="fas fa-envelope"></i>
+
+              <div class="msg-num ic-num">
+                  {{inb_num}}
+              </div>
+              
+              <div class="icon-menu">
+                  <div class="icon-menu-sub">
+                    <div class="ic-nill-core" *ngIf="inb_num === 0">
+                      <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                      </div>
+                      <h3 class="icon-menu-h">
+                        All Cleaned up, you've no notification!
+                      </h3>
+                    </div>
+                    <div class="ic-notifications-div" *ngIf="inb_num !== 0" id="style-2">
+                      <div *ngFor="let msg of inb_msg">
+                        <div class="notification">
+                          <div class="n-left">
+                            <div class="nl-img">
+                              <img src="{{msg.profile_pic}}" alt="">
+                            </div>
+                          </div>
+                          <div class="n-middle">
+                            <div class="n-text">
+                                {{msg.msg}}
+                            </div>
+                            <div class="n-time">
+                                {{msg.time}}
+                            </div>
+                          </div>
+                          <div class="n-right">
+                            <span class="nl-ico">
+                              <i class="fas fa-envelope"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="icon-menu-notify" routerLink='/inbox'>
+                      <h5 class="noti">View all Notifications</h5>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+             
+          </li>
+          <li>
+            <div class="msg-btn ic-btns">
+              <i class="fas fa-bell"></i>
+              <div class="msg-num ic-num">
+                {{unread_num}}
+              </div>
+              <!-- <div class="ic-menu"> -->
+
+                <div class="icon-menu">
+                  <div class="icon-menu-sub">
+                    <div class="ic-nill-core" *ngIf="unread_num === 0">
+                      <div class="icon">
+                        <i class="fas fa-bell"></i>
+                      </div>
+                      <h3 class="icon-menu-h">
+                        All Cleaned up, you've no notification!
+                      </h3>
+                    </div>
+                    <div class="ic-notifications-div" *ngIf="app.unread_num !== 0" id="style-2">
+                      <div *ngFor="let not of f_not_num">
+                        <div class="notification" (click)="goto_order_det(not.dest,not.link,not.not_id)">
+                          <div class="n-left">
+                            <div class="nl-img">
+                              <img src="{{not.image}}" alt="">
+                            </div>
+                          </div>
+                          <div class="n-middle">
+                            <div class="n-text" [innerHTML]="not.message">
+                            </div>
+                            <div class="n-time">
+                                {{not.date}}
+                            </div>
+                          </div>
+                          <div class="n-right">
+                            <span class="nl-ico">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="icon-menu-noti" routerLink='/notifications'>
+                      <h5 class="noti">View all Notifications</h5>
+                    </div>
+                  </div>
+                </div>
+             
+
+              <!-- </div> -->
+            </div>
+          </li>
+          <li>
+            <div class="pro-pic-div">
+              <div class="pro-pic-core">
+                <img src="{{profile_pic}}" alt="">
+              </div>
+              <div class="pro-pic-name-div">
+                <h5 class="pro-pic-name">
+                    {{app.name}}
+                  <span class="pro-pic-chev">
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+                </h5>
+                <div class="pro-menu-div">
+                  <ul>
+                    <li>
+                      Hi, {{app.name}} !
+                    </li>
+                    <li routerLink='/dashboard'>
+                      Dashboard
+                    </li>
+                    <li (click)="goto_seller()">
+                      Profile
+                    </li>
+                    <li routerLink="/settings/profile">
+                      Settings
+                    </li>
+                    <li routerLink="/favorites">
+                      Favorites
+                    </li>
+                    <li routerLink="/manage-orders">
+                      Manage Orders
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      Author Settings
+                    </li>
+                    <li routerLink="/create-gig">
+                      Create New Gig
+                    </li>
+                    <li>
+                      Earnings
+                    </li>
+                    <li routerLink="/manage-sales">
+                      Manage Sales
+                    </li>
+                  </ul>
+                  <div class="pro-logout-div" (click)='Logout()'>
+                    Logout
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grids-ico" (click)="open_daimond()">
+              <i class="fas fa-th"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</header>
+<header>
+  <div class="main">
+    <div class="daimond-dash">
+        <div class="d-top">
+            <h1>NAVIGATIONE</h1>
+            <div class="cross" (click)="close_daimond()"><i class="fas fa-times cac"></i></div>
+        </div>
+        <div class="d-bot">
+            <div class="tab one" routerLink="/dashboard" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="log-title">
+                        Dashboard
+                    </div>
+                </div>
+            </div>
+            <div class="tab two" routerLink="/settings/profile" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="log-title">
+                        Profile
+                    </div>
+                </div>
+            </div>
+            <div class="tab three" routerLink="/inbox" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="log-title">
+                        Mailbox
+                    </div>
+                </div>
+            </div>
+            <div class="tab four" routerLink="/manage-sales" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="log-title">
+                       Tasks
+                    </div>
+                </div>
+            </div>
+            <div class="tab five" routerLink="settings/account" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="log-title">
+                        Settings
+                    </div>
+                </div>
+            </div>
+            <div class="tab six" routerLink="/manage-orders" (click)="close_daimond()">
+                <div class="log-users">
+                    <div class="log-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="log-title">
+                        Calendar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>

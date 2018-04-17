@@ -1,0 +1,248 @@
+.main-container{
+  /* padding: 40px auto; */
+}
+.dash-core{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 30px auto;
+}
+.dash-left{
+  width: 27%;
+}
+.dash-left-core{
+  display: block;
+  border: 2px solid #ddd;
+  padding-bottom: 20px;
+}
+.d-l-img-div{
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.d-l-img-core{
+  height: 85px;
+  width: 85px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.d-l-img-core img{
+  height: 85px;
+  width: auto;
+}
+.d-l-img-name{
+  font-size: 130%;
+  font-weight: var(--font-weight-bold);
+  color: #444;
+  margin: 4px;
+}
+.d-l-img-cap{
+  color: #a69999;
+  font-weight: var(--font-weight-light);
+  font-size: 95%;
+}
+.d-l-dets-div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.d-l-dets-core{
+  width: 90%;
+}
+.d-l-det{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.d-l-d-left{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.d-l-ico{
+  margin-right: 10px;
+  font-size: 80%;
+  color: #555;
+}
+.d-l-det-val{
+  font-weight: var(--font-weight-bold);
+  color: #444;
+  text-align: right;
+  margin-bottom: 7px;
+  font-size: 95%;
+}
+.d-l-det-n{
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.d-l-d-p{
+  font-weight: var(--font-weight-mid);
+  font-size: 85%;
+  line-height: 1.5;
+  color: #ddd;
+  margin: 10px;
+}
+.dash-right{
+  width: 71%;
+}
+.d-r-top{
+  width: 100%;
+  height: 110px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.d-r-title{
+  font-weight: var(--font-weight-mid);
+  font-size: 150%;
+  color: #444;
+  margin: 10px 14px;
+}
+.d-r-cap{
+  font-weight: var(--font-weight-light);
+  font-size: 80%;
+  margin: 10px 14px;
+}
+.d-r-create-new-div{
+  height: 290px;
+  width: 100%;
+  border: 1px dashed #666;
+  background-color: #f7f7f7;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #75787d;
+}
+.plus-ico{
+  font-size: 240%;
+  color: inherit;
+}
+.d-r-c-title{
+  font-size: 130%;
+  font-weight: var(--font-weight-bold);
+  color: inherit;
+  margin: 15px 0;
+}
+.d-r-c-cap{
+  width: 220px;
+  text-align: center;
+}
+.d-r-to-do-div{
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+.d-r-to-do-top{
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.d-r-to-do-title{
+  margin-left: 30px;
+  font-size: 120%;
+}
+.d-r-to-do{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  border-bottom: 1px solid #ddd;
+}
+.d-r-to-do:last-child{
+  border-bottom: none;
+}
+.d-r-td-ico,.d-r-td-btn-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.d-r-td-ico{
+  height: 100%;
+  width: 15%;
+}
+.d-r-td-det{
+  width: 45%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.d-r-td-btn-div{
+  width: 40%;
+}
+.d-r-td-btn{
+  height: 40px;
+  width: 145px;
+  color: #fff;
+  border: none;
+  background-color: #00B946;
+  border-radius: 4px;
+  font-weight: var(--font-weight-mid);
+  font-size: 97%;
+  cursor: pointer;
+  display: none;
+}
+.d-r-td-title{
+  font-weight: var(--font-weight-mid);
+  color: #444;
+}
+.d-r-td-label{
+  color: #999;
+  font-size: 96%;
+  margin-top: 5px;
+}
+.d-r-to-do:hover .d-r-td-title{
+  color: #1A779C;
+}
+.d-r-to-do:hover .d-r-td-btn{
+  display: block;
+}
+.d-r-sh-s-div{
+  margin-top: 30px;
+}
+.d-r-sh-s-div h5{
+  font-weight: var(--font-weight-bold);
+  font-size: 90%;
+}
+.sh-dr-div{
+  margin-top: 0;
+}
+.sh-r-td-title{
+  font-weight: var(--font-weight-bold);
+  font-size: 90%;
+}
+.sh-r-td-label{
+  font-size: 80%;
+  color: #888;
+  margin-top: 7px;
+}
+.sh-r-r-btn{
+  height: 35px;
+  width: 200px;
+  background-color: #1FA7C2;
+  color: #fff;
+  font-weight: var(--font-weight-mid);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 96%;
+}

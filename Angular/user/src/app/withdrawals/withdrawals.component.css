@@ -1,0 +1,235 @@
+.main-container{
+  display: block;
+  padding: 30px 0;
+}
+.u-sub-heads{
+  font-size: 140%;
+}
+.p-core{
+  margin-top: 50px;
+}
+.m-r-top-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 120px;
+}
+.m-r-t-div{
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+}
+.m-r-t-div:last-child{
+  border-right: none;
+}
+.m-r-t-top,.m-r-t-btm{
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.m-r-t-top{
+  font-size: 200%;
+  color: #ddd;
+}
+.m-r-t-btm{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.m-r-t-b-left{
+  margin-right: 10px;
+}
+.m-r-t-b-left h5{
+  font-weight: var(--font-weight-thick);
+  font-size: 180%;
+}
+.m-r-t-b-t{
+  font-weight: var(--font-weight-mid);
+  font-size: 80%;
+}
+.m-r-t-b-c{
+  font-size: 76%;
+  color: #888;
+}
+
+.w-l-e-box-1{
+  border:1px solid #ddd;
+  margin-top: 25px;
+  padding:20px 10px;
+}
+.w-l-e-main{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  height:100%;
+
+}
+.w-l-e-with{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: row;
+}
+.w-l-e-with{
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
+.w-lef-e-with{
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-direction: column;;
+  height:70%;
+  width:60%;
+  
+}
+.w-lef-e-with-title{
+  font-size: 120%;
+  font-weight: var(--font-weight-mid);
+}
+.w-left-wiht-am{
+  margin-top: 10px;
+  padding: 20px 0px;
+ 
+}
+.w-left-wiht-am-title{
+  font-size: 90%;
+  font-weight: var(--font-weight-mid);
+  color:#000;
+}
+.w-l-w-am-another{
+  margin-top: 10px;
+  padding: 14px 9px 13px 18px;
+}
+.w-l-w-am-con{
+  font-size: 75%;
+  font-weight: var(--font-weight-mid);
+  color:#999;
+}
+.w-l-w-m{
+  padding: 15px 0px ;
+}
+.w-l-w-m{
+  margin-top: 5px;
+}
+.w-l-method-t{
+  font-size:90%;
+  font-weight: var(--font-weight-mid);
+  color:#000;
+  margin-top: 10px;
+}
+.w-l-w-m-pay{
+  font-size: 80%;
+  font-weight: var(--font-weight-mid);
+  color:#999;
+  margin-top: 7px;
+  padding: 10px 8px;
+}
+.w-l-m-acc-title{
+  margin-top: 20px;
+  padding: 10px 5px;
+}
+.w-l-m-acc-t{
+  font-size:90%;
+  font-weight: var(--font-weight-mid);
+  color:#000;
+}
+.w-l-m-acc-t-h{
+  font-size: 80%;
+  font-weight: var(--font-weight-mid);
+  color:#999;
+  margin-top: 7px;
+  padding: 10px 8px;
+}
+.w-l-m-pas-title{
+  margin-top: 10px;
+  padding: 10px 5px;
+}
+.w-l-m-pas-t{
+  font-size:90%;
+  font-weight: var(--font-weight-mid);
+  color:#000;
+}
+.w-l-m-pas-t-h{
+  font-size: 80%;
+  font-weight: var(--font-weight-mid);
+  color:#999;
+  margin-top: 7px;
+  padding: 10px 8px;
+}
+.w-l-m-but{
+  margin-top: 20px;
+  padding: 10px 5px;
+}
+.w-l-m-but-title{
+  background: #2b3a3e;
+  padding: 10px 0px;
+  width: 465px;
+  height: 48px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.w-l-m-but-t {
+  font-size:120%;
+  font-weight: var(--font-weight-mid);
+  color:#fff;
+  margin-top: 10px;
+}
+.w-l-m-but-t-w{
+  color: #00ffda;
+}
+.w-l-m-but-t-h{
+  margin-left:50px;
+  font-size: 80%;
+}
+.w-l-with-h{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction:column;
+  width: 100%;
+}
+.w-l-with-left-con{
+  display: flex;
+  justify-content:left;
+  align-items: left;
+  flex-direction:row;
+  width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 10px 5px;
+}
+.w-l-with-left-con-ac{
+
+}
+.w-l-with-left-con-m{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 5px;
+}
+.w-l-with-his-title{
+  font-size: 120%;
+  font-weight: var(--font-weight-mid);
+}
+.w-l-with-left-con-a{
+  padding: 15px 15px;
+  font-size: 80%;
+  font-weight: var(--font-weight-mid);
+  color:#999;
+}

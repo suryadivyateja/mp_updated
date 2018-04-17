@@ -1,0 +1,150 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="u-sub-heads">My Favorites</h2>
+
+    <div class="fav-core" *ngIf="favorites_length">
+      <div class="no-fav-div">
+        <h4 class="no-fav-title">
+          You have no favorites
+        </h4>
+        <p class="no-fav-p">
+          Instead of feeling empty, why don't you
+          <a routerLink="/categories">browse the Envato Market sites</a> to see if you can find some items you like?
+        </p>
+      </div>
+    </div>
+    <div *ngFor="let x of fav_det">
+      <div class="gig">
+        <div class="gig-display">
+          <div class="gig-img" (click)='go_to_gigdet(x.gig_id)'>
+              <img src="{{x.gig_img}}" alt="" width="100%" height="100%">
+          </div>
+          <div class="gig-dets">
+            <div class="gig-title-div" (click)='go_to_gigdet(x.gig_id)'>
+              <h3 class="gig-title">
+                  {{x.gig_title}}..
+              </h3>
+            </div>
+            <div class="gig-author-name-div">
+              <h4 class="gig-author-name">
+                By {{x.name}}
+              </h4>
+            </div>
+            <div class="gig-rating-div">
+              <div class="gig-rating-core">
+                <!-- <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i> -->
+                <img src="{{x.raty[0]}}" alt="" width="12px" height="12px">
+                <img src="{{x.raty[1]}}" alt="" width="12px" height="12px">
+                <img src="{{x.raty[2]}}" alt="" width="12px" height="12px">
+                <img src="{{x.raty[3]}}" alt="" width="12px" height="12px">
+                <img src="{{x.raty[4]}}" alt="" width="12px" height="12px">
+              </div>
+            </div>
+            <div class="gig-stats-div">
+              <div class="gig-stats-left">
+                <span class="gig-stat-icon">
+                  <i class="fas fa-users"></i>
+                </span>
+                <p>{{x.jobes_done}} Completed</p>
+              </div>
+              <div class="gig-stats-right">
+                <p>STARTING AT
+                  <span class="gig-price">${{x.gig_cost}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gig-hover">
+          <div class="gig-hover-title-div">
+            <h3 class="gig-hover-title">
+                {{x.gig_title}}
+            </h3>
+          </div>
+          <div class="gig-hover-n-tags-div">
+            <div class="gig-hover-best-seller-tag-div">
+              <span class="gig-hover-best-seller-tag">
+                BEST SELLER
+              </span>
+            </div>
+            <div class="gig-hover-tags-tags-div">
+              in
+              <span class="gig-tags-tag">Deep Learning</span>
+              <span class="gig-tags-cat">Business</span>
+            </div>
+          </div>
+          <div class="gig-hover-stats-div">
+            <div class="gig-hover-stat-div">
+              <span class="gig-hover-stat-ico">
+                <i class="fas fa-clock"></i>
+              </span>
+              <h6 class="gig-hover-stat-stat">{{x.pac_del_sta}} Days Delivery</h6>
+            </div>
+            <div class="gig-hover-stat-div">
+              <span class="gig-hover-stat-ico">
+                <i class="fas fa-sync"></i>
+              </span>
+              <h6 class="gig-hover-stat-stat">{{x.rev_sta}} Revisions</h6>
+            </div>
+          </div>
+          <div class="gig-hover-desc-div">
+            <p class="gig-hover-desc">
+              Learn to create Deep Learning Algorithms in Python from two Machine Learning &amp; Data Science experts. Templates included.
+            </p>
+          </div>
+  
+          <div class="gig-hover-tags-div">
+            <div class="gig-hover-tags-core">
+              <span class="gig-hover-tag">
+                ux design
+              </span>
+              <span class="gig-hover-tag">
+                ui design
+              </span>
+              <span class="gig-hover-tag">
+                web design
+              </span>
+              <span class="gig-hover-tag">
+                graphic design
+              </span>
+              <span class="gig-hover-tag">
+                app design
+              </span>
+              <span class="gig-hover-tag">
+                dashboard design
+              </span>
+              <span class="gig-hover-tag">
+                landing page design
+              </span>
+            </div>
+          </div>
+  
+          <div class="gig-hover-add-btn-div">
+            <button class="gig-hover-add-btn">
+              View Details
+            </button>
+            <div class="gig-hover-fav-btn-div">
+              <!-- <span class="gig-hover-fav-btn">
+                <i class="fas fa-heart"></i>
+              </span> -->
+              <span class="gig-hover-fav-btn">
+                <span *ngIf="x.fav_status == false">
+                    <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(x.gig_id,$event)">
+                </span>
+                <span *ngIf="x.fav_status == true">
+                    <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(x.gig_id,$event)">
+                </span>
+              </span>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

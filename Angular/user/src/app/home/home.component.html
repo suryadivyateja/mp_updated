@@ -1,0 +1,824 @@
+<div class="main-container">
+  <div class="fvp">
+    <div class="width-control">
+      <div class="fvp-core">
+        <div class="left-section">
+          <h2 class="main-txt">
+            A community of writers <br> ready for your gig
+          </h2>
+          <h6 class="main-txt-caption">
+            Get everything you need to apply to jobs, including a resume, linkedin profile makeover or anything in between.
+          </h6>
+          <div class="search-box-div">
+            <div class="search-box-core">
+              <input type="text" class="search-input" placeholder="What do you want to learn ?">
+              <button class="search-btn">SEARCH</button>
+              <div class="search-box-list" id="style-2">
+                <div class="search-list">
+                  <ul class="serach-list-ref">
+                    <li *ngFor="let x of search_result">
+                      <div class="search-gig-main">
+                      <div class="search-img" (click)="goto('title',x)">
+                        <img src="{{x.gig_image}}">
+                      </div>
+                      <div class="search-title" (click)="goto('title',x)">
+                        <h6 class="search-t" (click)="goto('title',x)">
+                            {{x.title.substr(0,47) | titlecase}}..
+                        </h6>
+                      
+                      <div class="search-author">
+                        <span class="search-a" (click)="goto('author',x)">
+                          - By {{x.seller_name | titlecase}}
+                        </span>
+                      </div>
+                    </div>
+                      <div class="search-cost">
+                        <span class="search-c">
+                          ${{x.pac_cos_sta}}.
+                        </span>
+                      </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-section">
+          <div class="r-imgs-core">
+            <!-- <div class="img-one imgs" id="img-one">
+              <img src="../../assets/img/main-txt-img.gif" alt="">
+            </div> -->
+            <!-- <div class="img-two imgs" id="img-two">
+              <img src="../../assets/img/main-txt-img.gif" alt="">
+            </div>
+            <div class="img-three imgs" id="img-three">
+              <img src="../../assets/img/main-txt-img.gif" alt="">
+            </div>
+            <div class="img-four imgs" id="img-four">
+              <img src="../../assets/img/main-txt-img.gif" alt="">
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="svp">
+    <div class="svp-core">
+      <div class="width-control">
+        <div class="top-dets">
+          <div class="dets-core">
+            <div class="det-one det">
+              <div class="det-left-ico">
+                <div class="det-ico-span">
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+              <div class="det-right-dets">
+                <h6 class="det-right-head">
+                  Trustworthy Writers
+                </h6>
+                <p class="det-right-p">
+                  We connect you directly to a professional resume writers. Read their reviews and profile. And contact them with any questions.
+                </p>
+              </div>
+            </div>
+            <div class="det-two det">
+              <div class="det-left-ico">
+                <div class="det-ico-span">
+                  <i class="fas fa-sticky-note"></i>
+                </div>
+              </div>
+              <div class="det-right-dets">
+                <h6 class="det-right-head">
+                  Safe &amp; Secure
+                </h6>
+                <p class="det-right-p">
+                  We use best-in-class technology to protect your transactions. That's our priority.
+                </p>
+              </div>
+            </div>
+            <div class="det-three det">
+              <div class="det-left-ico">
+                <div class="det-ico-span">
+                  <i class="fas fa-certificate"></i>
+                </div>
+              </div>
+              <div class="det-right-dets">
+                <h6 class="det-right-head">
+                  Fast &amp; Efficient
+                </h6>
+                <p class="det-right-p">
+                    Save up to 70% of the costs when compared to an agency and get results 3x faster than traditional process			
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popular-cats-div">
+          <h3 class="sub-heads">Popular Categories</h3>
+          <h5 class="sub-heads-caption">From resume to selection criteria, we've got what you need to make you standout</h5>
+
+          <div class="popular-cats-core">
+
+            
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+
+
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+            <div class="pop-cat">
+              <div class="pop-cat-img-div">
+                <img src="../../assets/img/pop_cat.png" alt="" class="pop-cat-img">
+              </div>
+              <div class="pop-cat-head-div">
+                <h5 class="pop-cat-head">
+                  Graphic &amp; Design
+                </h5>
+              </div>
+              <div class="pop-cat-desc-div">
+                <p class="pop-cat-desc">
+                  Logo Design, Business Cards, Illustration &amp; lots more
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-white"></div>
+    <div class="bottom-gray"></div>
+  </div>
+  <div class="tvp">
+    <div class="width-control">
+      <h4 class="tvp-head">Discover Our Most Popular Services</h4>
+      <div class="gigs-core">
+        
+        <!-- <div class="gig">
+          <div class="gig-display">
+            <div class="gig-img"></div>
+            <div class="gig-dets">
+              <div class="gig-title-div">
+                <h3 class="gig-title">
+                  Machine Learning A-Z: Hands-On Python
+                </h3>
+              </div>
+              <div class="gig-author-name-div">
+                <h4 class="gig-author-name">
+                  By Peter Moxon
+                </h4>
+              </div>
+              <div class="gig-rating-div">
+                <div class="gig-rating-core">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="gig-stats-div">
+                <div class="gig-stats-left">
+                  <span class="gig-stat-icon">
+                    <i class="fas fa-users"></i>
+                  </span>
+                  <p>129 Completed</p>
+                </div>
+                <div class="gig-stats-right">
+                    <p>STARTING AT  <span class="gig-price">$27</span> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gig-hover">
+            <div class="gig-hover-title-div">
+              <h3 class="gig-hover-title">
+                Deep Learning A-Z: Hands-On Artificial Neural Networks
+              </h3>
+            </div>
+            <div class="gig-hover-n-tags-div">
+              <div class="gig-hover-best-seller-tag-div">
+                <span class="gig-hover-best-seller-tag">
+                  BEST SELLER
+                </span>
+              </div>
+              <div class="gig-hover-tags-tags-div">
+                in <span class="gig-tags-tag">Deep Learning</span> <span class="gig-tags-cat">Business</span>
+              </div>
+            </div>
+            <div class="gig-hover-stats-div">
+              <div class="gig-hover-stat-div">
+                <span class="gig-hover-stat-ico">
+                    <i class="fas fa-clock"></i>
+                </span>
+                <h6 class="gig-hover-stat-stat">20 Days Delivery</h6>
+              </div>
+              <div class="gig-hover-stat-div">
+                <span class="gig-hover-stat-ico">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <h6 class="gig-hover-stat-stat">3 Revisions</h6>
+              </div>
+            </div>
+            <div class="gig-hover-desc-div">
+              <p class="gig-hover-desc">
+                Learn to create Deep Learning Algorithms in Python from two Machine Learning &amp; Data Science experts. Templates included.
+              </p>
+            </div>
+
+            <div class="gig-hover-tags-div">
+              <div class="gig-hover-tags-core">
+                <span class="gig-hover-tag">
+                  ux design
+                </span>
+                <span class="gig-hover-tag">
+                  ui design
+                </span>
+                <span class="gig-hover-tag">
+                  web design
+                </span>
+                <span class="gig-hover-tag">
+                  graphic design
+                </span>
+                <span class="gig-hover-tag">
+                  app design
+                </span>
+                <span class="gig-hover-tag">
+                  dashboard design
+                </span>
+                <span class="gig-hover-tag">
+                  landing page design
+                </span>
+              </div>
+            </div>
+
+            <div class="gig-hover-add-btn-div">
+              <button class="gig-hover-add-btn">
+                Add To Cart
+              </button>
+              <div class="gig-hover-fav-btn-div">
+                <span class="gig-hover-fav-btn">
+                  <i class="fas fa-heart"></i>
+                </span>
+              </div>
+            </div>
+
+          </div>  
+        </div> -->
+
+        <!-- GIG's start -->
+        <span *ngFor="let gig of gigs ; let i = index">
+          <span *ngIf="i<12">
+            <div class="gig">
+              <div class="gig-display">
+                <div class="gig-img">
+                  <img src="{{gig.gig_img}}" alt="" width="100%" height="100%">
+                </div>
+                <div class="gig-dets">
+                  <div class="gig-title-div">
+                    <h3 class="gig-title">
+                      {{gig.title.substr(0,59)}}....
+                    </h3>
+                  </div>
+                  <div class="gig-author-name-div">
+                    <h4 class="gig-author-name">
+                      By {{gig.name | titlecase}}
+                    </h4>
+                  </div>
+                  <div class="gig-rating-div">
+                    <div class="gig-rating-core">
+                        <img src="{{gig.star1}}" alt="" width="12px" height="12px">
+                        <img src="{{gig.star2}}" alt="" width="12px" height="12px">
+                        <img src="{{gig.star3}}" alt="" width="12px" height="12px">
+                        <img src="{{gig.star4}}" alt="" width="12px" height="12px">
+                        <img src="{{gig.star5}}" alt="" width="12px" height="12px">
+                    </div>
+                  </div>
+                  <div class="gig-stats-div">
+                    <div class="gig-stats-left">
+                      <span class="gig-stat-icon">
+                        <i class="fas fa-users"></i>
+                      </span>
+                      <p>{{gig.jobs_done}} Completed</p>
+                    </div>
+                    <div class="gig-stats-right">
+                        <p>STARTING AT  <span class="gig-price">${{gig.pac_cos_sta}}</span> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="gig-hover">
+                <div class="gig-hover-title-div">
+                  <h3 class="gig-hover-title">
+                    {{gig.title}}.
+                  </h3>
+                </div>
+                <div class="gig-hover-n-tags-div">
+                  <div class="gig-hover-best-seller-tag-div">
+                    <span class="gig-hover-best-seller-tag">
+                      BEST SELLER
+                    </span>
+                  </div>
+                  <div class="gig-hover-tags-tags-div">
+                    in <span class="gig-tags-tag">{{gig.cat}}</span> <span class="gig-tags-cat">{{gig.sub_category}}</span>
+                  </div>
+                </div>
+                <div class="gig-hover-stats-div">
+                  <div class="gig-hover-stat-div">
+                    <span class="gig-hover-stat-ico">
+                        <i class="fas fa-clock"></i>
+                    </span>
+                    <h6 class="gig-hover-stat-stat">{{gig.pac_del_sta}} Days Delivery</h6>
+                  </div>
+                  <div class="gig-hover-stat-div">
+                    <span class="gig-hover-stat-ico">
+                        <i class="fas fa-sync"></i>
+                    </span>
+                    <h6 class="gig-hover-stat-stat">{{gig.rev_sta}} Revisions</h6>
+                  </div>
+                </div>
+                <div class="gig-hover-desc-div">
+                  <p class="gig-hover-desc">
+                    {{gig.description.substr(0,150)}}...
+                  </p>
+                </div>
+    
+                <div class="gig-hover-tags-div">
+                  <div class="gig-hover-tags-core">
+                    <span class="gig-hover-tag">
+                      ux design
+                    </span>
+                    <span class="gig-hover-tag">
+                      ui design
+                    </span>
+                    <span class="gig-hover-tag">
+                      web design
+                    </span>
+                    <span class="gig-hover-tag">
+                      graphic design
+                    </span>
+                    <span class="gig-hover-tag">
+                      app design
+                    </span>
+                    <span class="gig-hover-tag">
+                      dashboard design
+                    </span>
+                    <span class="gig-hover-tag">
+                      landing page design
+                    </span>
+                  </div>
+                </div>
+    
+                <div class="gig-hover-add-btn-div">
+                  <button class="gig-hover-add-btn" (click)='gotoGig(gig._id)'>
+                    View Details
+                  </button>
+                  <div class="gig-hover-fav-btn-div">
+                    <!-- <span class="gig-hover-fav-btn">
+                      <i class="fas fa-heart"></i>
+                    </span> -->
+                    <span *ngIf="gig.fav_status == false">
+                      <span class="gig-hover-fav-btn">
+                        <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,$event,gig)">
+                      </span>
+                  </span>
+                  <span *ngIf="gig.fav_status == true">
+                    <span class="gig-hover-fav-btn">
+                      <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,$event,gig)">
+                    </span>
+                  </span>                    
+                  </div>
+                </div>
+    
+              </div>  
+            </div>
+          </span>
+        </span>
+        <!-- GIG's END -->
+      </div>
+      <button class="gigs-show-all-btn" routerLink="/categories">
+        Show all
+      </button>
+    </div>
+  </div>
+  <div class="fovp">
+    <div class="width-control">
+      <h3 class="sub-heads">A global community at work</h3>
+      <h5 class="sub-heads-caption">Our world-class freelance resume writers from NYC to New Zealand are ready for your gig.</h5>
+      <div class="fovp-core">
+        <div class="fovp-left">
+          <img src="../../assets/img/fovp-img.gif" alt="">
+        </div>
+        <div class="fovp-right">
+          <h4>
+            Only the best for your career
+          </h4>
+          <p>
+              Only the best for your career
+              cvHatch is the world's #1 marketplace for career services. Our writer network is made up of certified career coaches, recruiters, hiring managers, and professionals who specialise in corporate communication. Today, we work with top resume writers in over 90 countries and fields of expertise. They are here to enable you to accomplish your career objectives. They offer a comprehensive range of service to help you with the greater part of your profession related requirements including building up your profession, directing and prompting, resume, cv, cover letter audit, career counselors and digital creative.								
+          </p>
+          <p>
+            Graduating from college? Entrepreneur? CEO? Transitioning careers? We've seen it all and we can help.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fivp">
+    <div class="width-control">
+      <div class="fivp-core">
+        <div class="fivp-left">
+          <h3 class="fivp-head">
+            How it works
+          </h3>
+          <div class="fivp-dets-div">
+            <div class="fivp-det">
+              <div class="fivp-icon">
+                  <div class="fivp-ico">
+                    <i class="fas fa-edit"></i>
+                  </div>
+              </div>
+              <div class="fivp-txt">
+                <h6 class="fivp-txt-head">Choose a Writer</h6>
+                <p class="fivp-txt-p">
+                  Browse profiles, reviews, and pricing. Choose you favorite writer and share your requirements								
+                </p>
+              </div>
+            </div>
+            <div class="fivp-det">
+              <div class="fivp-icon">
+                <div class="fivp-ico">
+                  <i class="fas fa-tasks"></i>
+                </div>
+              </div>
+              <div class="fivp-txt">
+                <h6 class="fivp-txt-head">Get Your Content</h6>
+                <p class="fivp-txt-p">
+                  Use messaing, share files or request revisions to ensure the content perfectly matches your requirements.								
+                </p>
+              </div>
+            </div>
+            <div class="fivp-det">
+              <div class="fivp-icon">
+                <div class="fivp-ico">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="fivp-txt">
+                <h6 class="fivp-txt-head">Job Complete</h6>
+                <p class="fivp-txt-p">
+                    Once you're 100% satisfied with the results - Review, approve and you're done!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fivp-right">
+          <div class="fivp-cards-core">
+            
+            <div class="fivp-card fivp-left-card">
+              <div class="db"></div>
+              <div class="card-core">
+                <div class="card-icon-div">
+                  <div class="card-ico">
+                    <i class="fas fa-users"></i> 
+                  </div>
+                </div>
+                <div class="card-title-div">
+                  <h5>Teams</h5>
+                </div>
+                <div class="card-stats-div">
+
+                  <div class="card-stat">
+                    <div class="card-stat-name">
+                      Experts
+                    </div>
+                    <div class="card-stat-show">
+                      <div class="stat-back">
+                        <div class="stat-value-rep">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-stat">
+                    <div class="card-stat-name">
+                      Hours
+                    </div>
+                    <div class="card-stat-show">
+                      <div class="stat-back">
+                        <div class="stat-value-rep">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-stat">
+                    <div class="card-stat-name">
+                      Compliance
+                    </div>
+                    <div class="card-stat-show">
+                      <div class="stat-back">
+                        <div class="stat-value-rep">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-stat">
+                    <div class="card-stat-name">
+                      Cost
+                    </div>
+                    <div class="card-stat-show">
+                      <div class="stat-back">
+                        <div class="stat-value-rep">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="card-btn-div">
+                  <button class="card-choose-btn">
+                    CHOOSE
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="fivp-card fivp-center-card">
+
+                <div class="card-core">
+                    <div class="card-icon-div">
+                      <div class="card-ico">
+                        <i class="fas fa-users"></i> 
+                      </div>
+                    </div>
+                    <div class="card-title-div">
+                      <h5>Teams</h5>
+                    </div>
+                    <div class="card-stats-div">
+    
+                      <div class="card-stat">
+                        <div class="card-stat-name">
+                          Experts
+                        </div>
+                        <div class="card-stat-show">
+                          <div class="stat-back">
+                            <div class="stat-value-rep">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="card-stat">
+                        <div class="card-stat-name">
+                          Hours
+                        </div>
+                        <div class="card-stat-show">
+                          <div class="stat-back">
+                            <div class="stat-value-rep">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="card-stat">
+                        <div class="card-stat-name">
+                          Compliance
+                        </div>
+                        <div class="card-stat-show">
+                          <div class="stat-back">
+                            <div class="stat-value-rep">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="card-stat">
+                        <div class="card-stat-name">
+                          Cost
+                        </div>
+                        <div class="card-stat-show">
+                          <div class="stat-back">
+                            <div class="stat-value-rep">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                    </div>
+                    <div class="card-btn-div">
+                      <button class="card-choose-btn">
+                        CHOOSE
+                      </button>
+                    </div>
+                  </div>
+
+            </div>
+
+            <div class="fivp-card fivp-right-card">
+              <div class="db"></div>
+
+              <div class="card-core">
+                  <div class="card-icon-div">
+                    <div class="card-ico">
+                      <i class="fas fa-users"></i> 
+                    </div>
+                  </div>
+                  <div class="card-title-div">
+                    <h5>Teams</h5>
+                  </div>
+                  <div class="card-stats-div">
+  
+                    <div class="card-stat">
+                      <div class="card-stat-name">
+                        Experts
+                      </div>
+                      <div class="card-stat-show">
+                        <div class="stat-back">
+                          <div class="stat-value-rep">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="card-stat">
+                      <div class="card-stat-name">
+                        Hours
+                      </div>
+                      <div class="card-stat-show">
+                        <div class="stat-back">
+                          <div class="stat-value-rep">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="card-stat">
+                      <div class="card-stat-name">
+                        Compliance
+                      </div>
+                      <div class="card-stat-show">
+                        <div class="stat-back">
+                          <div class="stat-value-rep">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="card-stat">
+                      <div class="card-stat-name">
+                        Cost
+                      </div>
+                      <div class="card-stat-show">
+                        <div class="stat-back">
+                          <div class="stat-value-rep">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                  <div class="card-btn-div">
+                    <button class="card-choose-btn">
+                      CHOOSE
+                    </button>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sivp">
+    <div class="width-control">
+      <div class="sivp-core">
+          <h3 class="sub-heads">Earn Money as cvHatch Writer</h3>
+          <p class="sivp-p">
+              Join an exclusive community of 500+ professional resume writers sharing their expertise. Get started earning money today.
+          </p>
+          <div class="shop-icon-div">
+            <div class="shop-icon">
+                <i class="fas fa-warehouse"></i>
+            </div>
+            <h6 class="open-shop-txt">
+              Open your shop and reach millions of buyers!
+            </h6>
+          </div>
+          <button class="sivp-become-author-btn">
+            BECOME A WRITER TODAY!
+          </button>
+      </div>
+    </div>
+  </div>
+</div>

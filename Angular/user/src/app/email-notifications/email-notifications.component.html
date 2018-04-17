@@ -1,0 +1,87 @@
+<div class="set-main-container">
+    <div class="title-top">
+        <div class="set-w-control">
+            <h2 class="set-titles">
+                Email Notifications
+            </h2>
+        </div>
+    </div>
+    <div class="set-core">
+        <div class="set-w-control">
+            <div class="set-w-c-core">
+                <div class="set-w-email">
+                    <div class="set-w-email-title">
+                        Email Notificatons
+                        <hr>
+                    </div>
+                    <div class="set-w-para">
+                        Receive email notifications when:
+                    </div>
+                    <div class="set-w-email-content">
+                        <ul>
+                            <li>
+                                <input type="checkbox" value="a" (change)="handleChange($event)" [checked]='a'> Someone follow you
+                            </li>
+                            <li>
+                                <input type="checkbox" value="b" (change)="handleChange($event)" [checked]='b'> Someone mention you
+                            </li>
+                            <li>
+                                <input type="checkbox" value="c" (change)="handleChange($event)" [checked]='c'> Someone sned you a message
+                            </li>
+                            <li>
+                                <input type="checkbox" value="d" (change)="handleChange($event)" [checked]='d'> Someone comments on a thread after you
+                            </li>
+                            <li>
+                                <input type="checkbox" value="e" (change)="handleChange($event)" [checked]='e'> Shopes you follow relaese a new product
+                            </li>
+                            <li>
+                                <input type="checkbox" value="f" (change)="handleChange($event)" [checked]='f'> Product you've purchased are update
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="set-w-email-verify">
+                    <div class="set-w-email-title">
+                        Creative Market Emails
+                        <hr>
+                    </div>
+                    <div class="set-w-para">
+                        Get a curated list of the finest goods and best deals delivered to your inbox:
+                    </div>
+                    <div class="set-w-email-content">
+                        <ul>
+
+                            <li>
+                                <input type="checkbox" value="g" (change)="handleChange($event)" [checked]='g'>Send me no more than 10 0f each email type per day
+                            </li>
+                            <li>
+                                <input type="checkbox" value="h" (change)="handleChange($event)" [checked]='h'> Get top products each week
+                            </li>
+                            <li>
+                                <input type="checkbox" value="i" (change)="handleChange($event)" [checked]='i'> Get new Free Goods each week
+                            </li>
+                            <li>
+                                <input type="checkbox" value="j" (change)="handleChange($event)" [checked]='j'>Get infrequent Creative Market product updates and announcements
+                            </li>
+                            <!-- <li>
+                                <input type="checkbox"> Get popular products each week
+                            </li>
+                            <li>
+                                <input type="checkbox"> Get weekly blog digest email
+                            </li>
+                            <li>
+                                <input type="checkbox"> Product you've purchased are update
+                            </li>
+                            <li>
+                                <input type="checkbox"> Get weekly blog diest emails
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <button type="button" class="btn btn-save" (click)="saveUser()">Save setting</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,203 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <h2 class="u-sub-heads">MY GIGS</h2>
+    <div class="m-core">
+      <div class="m-left">
+        <div class="m-left-core">
+          <div class="m-l-index">
+            <div class="m-l-index-title">
+              <h3>Orders</h3>
+            </div>
+            <div class="m-l-btn selected-index" (click)="go_to_gig('all')">
+              All
+            </div>
+            <div class="m-l-btn" (click)="go_to_gig('active')">
+              Active
+            </div>
+            <div class="m-l-btn" (click)="go_to_gig('Deactive')">
+              Deactive
+            </div>
+            <div class="m-l-btn" (click)="go_to_gig('Rejected')">
+              Rejected
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-right">
+        <div class="m-right-gig">
+          <div class="m-right-gig-div">
+            <div *ngFor="let  x of final">
+              <div class="m-r-top">
+                <div class="m-r-top-img">
+                  <img src="{{x.img1}}" alt="" width="100%" height="100%">
+                  <div class="m-gig-setting">
+                    <div class="m-gig-icon">
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="m-set-menu">
+                      <div class="m-set-menu-core">
+                        <ul>
+                            <li id="gig-drop" (click)="goto_edit_gig([x._id])">Edit</li>
+                            <li id="gig-drop" (click)="delete_gig(x)">Delete</li>
+                            <li id="gig-drop" (click)="goto_gig_det(x._id)">Preview</li>
+                            <span *ngIf="x.pause === false">
+                                <li id="gig-drop1" (click)="pause_gig(x)">Pause</li>
+                            </span>
+                            <span *ngIf="x.pause === true">
+                                <li id="gig-drop1" (click)="pause_gig(x)">UnPause</li>
+                            </span>                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="m-r-top-title">
+                  <h5 class="m-r-top-t-content">
+                      {{x.title.substr(0,59)}}..
+                  </h5>
+                </div>
+                <div class="m-r-t-footer">
+                  <div class="m-r-f-icons">
+                    <ul>
+                      <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                        <i class="fas fa-dollar-sign"></i>
+                      </li>
+                      <li class="s-c-left-icons-ico">
+                        <i class="fas fa-envelope"></i>
+                      </li>
+                      <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                        <i class="fas fa-user"></i>
+                      </li>
+                      <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                        <i class="fas fa-phone"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="m-r-top">
+              <div class="m-r-top-img">
+                <img src="../../assets/img/gigs.PNG" alt="" width="100%" height="100%">
+                <div class="m-gig-setting">
+                    <div class="m-gig-icon">
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="m-set-menu">
+                      <div class="m-set-menu-core">
+                        <ul>
+  
+                          <li>Accept</li>
+                          <li>Deliver</li>
+                          <li>Cancel</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="m-r-top-title">
+                <h5 class="m-r-top-t-content">
+                  Machine Learning A-Z
+                  <sup style="font-size:10px;">TM</sup>:Hands-on Hands-on Python & R in...
+                </h5>
+              </div>
+              <div class="m-r-t-footer">
+                <div class="m-r-f-icons">
+                  <ul>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-dollar-sign"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico">
+                      <i class="fas fa-envelope"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-user"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-phone"></i>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div> -->
+            <!-- <div class="m-r-gig-top"> -->
+            <!-- <div class="m-r-top">
+              <div class="m-r-top-img">
+                <img src="../../assets/img/gigs.PNG" alt="" >
+                <div class="m-gig-setting">
+                    <div class="m-gig-icon">
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="m-set-menu">
+                      <div class="m-set-menu-core">
+                        <ul>
+  
+                          <li>Accept</li>
+                          <li>Deliver</li>
+                          <li>Cancel</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="m-r-top-title">
+                <h5 class="m-r-top-t-content">
+                  Machine Learning A-Z
+                  <sup style="font-size:10px;">TM</sup>:Hands-on Hands-on Python & R in...
+                </h5>
+              </div>
+              <div class="m-r-t-footer">
+                <div class="m-r-f-icons">
+                  <ul>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-dollar-sign"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico">
+                      <i class="fas fa-envelope"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-user"></i>
+                    </li>
+                    <li class="s-c-left-icons-ico inactive-s-c-l-ico">
+                      <i class="fas fa-phone"></i>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div> -->
+           <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dark-pop">
+        <div class="confirm">
+          <h3>
+            Are you sure want to delete this gig?
+          </h3>
+          <div class="buttons">
+            <button class="yes" (click)="fin_delete_gig()">YES</button>
+            <button class="no" (click)="close_pop()">NO</button>
+          </div>
+        </div>
+  </div>
+</div>
+<span *ngIf="greeting">
+  <div class="pdb">
+    <div class="pwb">
+      <span class="close-ico"(click)='closeDB()'><i class="fas fa-times"></i></span>
+      <h5>Congratulations! You posted a contest.</h5>
+      <h6>While you have coffee and wait for entries to come, <br> <span class="bold">Why not post another contest ?</span></h6>
+    </div>
+  </div>
+</span>

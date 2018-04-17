@@ -1,0 +1,45 @@
+<app-sub-header></app-sub-header>
+<div class="main-container">
+  <div class="width-control">
+    <div class="notifications-core">
+      <div class="head-div">
+        <h2 class="u-sub-heads">
+          Your Notifications
+        </h2>
+        <button class="all-read-btn" (click)="all_read()">
+          Mark as all Read
+        </button>
+      </div>
+      <div class="all-not"  id="style-2">
+        <div *ngFor="let not of f_not_arr">
+          
+          <div class="main-not">
+            <div class="not-time">
+                {{not.date}}
+            </div>
+
+            <div class="main-img-not">
+              <div class="img-not">
+                <img src="{{not.image}}" alt="" class="center">
+              </div>
+              <div class="not-not" (click)="goto_order_det(not.destination,not.link,not.not_id)">
+                <p [innerHTML]="not.message"></p>
+                <!-- <p><span class="bold">Name</span> added <span class="bold">Pixel diamond</span> to favorites</p> -->
+              </div>
+            </div>
+
+            <div class="close-heart">
+              <div class="cross">
+                <i class="fa fa-times"></i>
+              </div>
+              <div class="heart center">
+                <i class="fa fa-heart"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
